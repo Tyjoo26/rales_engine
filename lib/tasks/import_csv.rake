@@ -3,6 +3,13 @@ require 'csv'
 namespace :import_csv do
   desc "Loads CSV into Database"
   task load: :environment do
+    InvoiceItem.all.each {|invoice_item| invoice_item.delete}
+    Transaction.all.each {|transaction| transaction.delete}
+    Item.all.each {|item| item.delete}
+    Invoice.all.each {|invoice| invoice.delete}
+    Customer.all.each {|customer| customer.delete}
+    Merchant.all.each {|merchant| merchant.delete}
+
     CSV.foreach('data/customers.csv', headers: true, header_converters: :symbol, converters: :numeric) do |row|
       Customer.create!(id: row[:id],
                       first_name: row[:first_name],
