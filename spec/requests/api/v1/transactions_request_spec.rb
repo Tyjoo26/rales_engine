@@ -11,7 +11,7 @@ describe "Transactions API" do
       get "/api/v1/transactions"
 
       expect(response).to be_success
-
+      
       transacts = JSON.parse(response.body)
       expect(transacts.count).to eq(2)
     end
