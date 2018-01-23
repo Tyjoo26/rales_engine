@@ -25,16 +25,6 @@ describe "Customer Search JSON QUERY" do
       expect(customer[:id]).to eq(id)
     end
 
-    xit "displays a specific customer based on passing a created_at query" do
-      created_at = create(:customer).created_at
-
-      get "/api/v1/customers/find?created_at=#{created_at}"
-
-      expect(response).to be_success
-
-      customer = JSON.parse(response.body, symbolize_names: true)
-
-      expect(customer[:created_at]).to eq(created_at)
-    end
+  
   end
 end
