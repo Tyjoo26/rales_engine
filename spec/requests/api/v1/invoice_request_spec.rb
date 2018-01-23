@@ -143,7 +143,7 @@ describe "Invoice API" do
     end
 
     it "created at" do
-      invoice = create_list(:invoice, 5, created_at: "2012-03-06T16:54:31.000Z").first
+      invoice = create_list(:invoice, 5).first
       date = (invoice.created_at)
 
       get "/api/v1/invoices/find_all?created_at=#{date}"
@@ -155,7 +155,7 @@ describe "Invoice API" do
     end
 
     it "updated at" do
-      invoice = create_list(:invoice, 5, updated_at: "2012-03-06T16:54:31.000Z").first
+      invoice = create_list(:invoice, 5).first
       date = (invoice.updated_at)
 
       get "/api/v1/invoices/find_all?updated_at=#{date}"
