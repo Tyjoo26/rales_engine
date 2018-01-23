@@ -4,5 +4,5 @@ class Invoice < ApplicationRecord
 
   enum status: ["shipped"]
 
-  scope :serve, ->{ select("id, customer_id, merchant_id, status")}
+  scope :serve, -> {select("id, customer_id, merchant_id, status").order("id ASC")}
 end
