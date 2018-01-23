@@ -1,17 +1,17 @@
-class Api::V1::Merchants::SearchController < ApplicationController
+class Api::V1::Transactions::SearchController < ApplicationController
 
 
   def show
-    render json: Merchant.where(transaction_params).first
+    render json: Transaction.where(transaction_params).first
   end
 
   def index
-    render json: Merchant.where(transaction_params)
+    render json: Transaction.where(transaction_params)
   end
 
   private
 
   def transaction_params
-    params.permit(:id, :invoice, :credit_card_number, :credit_card_expiration_date, :result)
+    params.permit(:id, :invoice_id, :credit_card_number, :credit_card_expiration_date, :result, :created_at, :updated_at)
   end
 end
