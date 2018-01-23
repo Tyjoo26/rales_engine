@@ -14,7 +14,7 @@ describe "Invoice API" do
 
   context "GET Invoice" do
     it "returns specific invoice" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
 
       get "/api/v1/invoices/#{invoice.id}"
 
@@ -27,7 +27,7 @@ describe "Invoice API" do
 
   context "GET first invoice with" do
     it "invoice id" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
 
       get "/api/v1/invoices/find?id=#{invoice.id}"
 
@@ -38,7 +38,7 @@ describe "Invoice API" do
     end
 
     it "customer id" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
 
       get "/api/v1/invoices/find?customer_id=#{invoice.customer_id}"
 
@@ -49,7 +49,7 @@ describe "Invoice API" do
     end
 
     it "merchant id" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
 
       get "/api/v1/invoices/find?merchant_id=#{invoice.merchant_id}"
 
@@ -60,7 +60,7 @@ describe "Invoice API" do
     end
 
     it "status" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
 
       get "/api/v1/invoices/find?status=#{invoice.status}"
 
@@ -71,7 +71,7 @@ describe "Invoice API" do
     end
 
     it "created at" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
       date = (invoice.created_at)
 
       get "/api/v1/invoices/find?created_at=#{date}"
@@ -83,7 +83,7 @@ describe "Invoice API" do
     end
 
     it "updated at" do
-      invoice = create(:invoice)
+      invoice = create_list(:invoice, 5).first
       date = (invoice.updated_at)
 
       get "/api/v1/invoices/find?updated_at=#{date}"
