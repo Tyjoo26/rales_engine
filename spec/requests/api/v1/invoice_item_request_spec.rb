@@ -106,6 +106,7 @@ describe "Invoice Item API" do
 
   context "GET Invoice Items with" do
     it "id" do
+      create_list(:invoice_item, 4)
       invoice_item = create_list(:invoice_item, 5).first
 
       get "/api/v1/invoice_items/find_all?id=#{invoice_item.id}"
@@ -116,8 +117,10 @@ describe "Invoice Item API" do
       expect(response_invoice_item.count).to eq(1)
     end
 
-    it "item_id" do
-      invoice_item = create_list(:invoice_item, 5).first
+    it "item_id" do\
+      item = create(:item)
+      create_list(:invoice_item, 4)
+      invoice_item = create_list(:invoice_item, 5, item: item).first
 
       get "/api/v1/invoice_items/find_all?item_id=#{invoice_item.item_id}"
 
@@ -128,7 +131,9 @@ describe "Invoice Item API" do
     end
 
     it "invoice_id" do
-      invoice_item = create_list(:invoice_item, 5).first
+      invoice = create(:invoice)
+      create_list(:invoice_item, 4)
+      invoice_item = create_list(:invoice_item, 5, invoice: invoice).first
 
       get "/api/v1/invoice_items/find_all?invoice_id=#{invoice_item.invoice_id}"
 
@@ -139,7 +144,8 @@ describe "Invoice Item API" do
     end
 
     it "quantity" do
-      invoice_item = create_list(:invoice_item, 5).first
+      create_list(:invoice_item, 4, quantity: 2)
+      invoice_item = create_list(:invoice_item, 5, quantity: 5).first
 
       get "/api/v1/invoice_items/find_all?quantity=#{invoice_item.quantity}"
 
@@ -150,7 +156,8 @@ describe "Invoice Item API" do
     end
 
     it "unit_price" do
-      invoice_item = create_list(:invoice_item, 5).first
+      create_list(:invoice_item, 4)
+      invoice_item = create_list(:invoice_item, 5, unit_price: "2.42").first
 
       get "/api/v1/invoice_items/find_all?unit_price=#{invoice_item.unit_price}"
 
@@ -161,6 +168,7 @@ describe "Invoice Item API" do
     end
 
     it "created_at" do
+      create_list(:invoice_item, 4, created_at: DateTime.yesterday)
       invoice_item = create_list(:invoice_item, 5).first
 
       get "/api/v1/invoice_items/find_all?created_at=#{invoice_item.created_at}"
@@ -172,6 +180,7 @@ describe "Invoice Item API" do
     end
 
     it "updated_at" do
+      create_list(:invoice_item, 4, updated_at: DateTime.yesterday)
       invoice_item = create_list(:invoice_item, 5).first
 
       get "/api/v1/invoice_items/find_all?updated_at=#{invoice_item.updated_at}"

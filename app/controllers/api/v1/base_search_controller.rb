@@ -8,6 +8,12 @@ class Api::V1::BaseSearchController < ApplicationController
       {description: params[:description]}
     elsif params[:unit_price]
       {unit_price: params[:unit_price]}
+    elsif params[:quantity]
+      {quantity: params[:quantity]}
+    elsif params[:item_id]
+      {item_id: params[:item_id]}
+    elsif params[:invoice_id]
+      {invoice_id: params[:invoice_id]}
     elsif params[:merchant_id]
       {merchant_id: params[:merchant_id]}
     elsif params[:customer_id]
