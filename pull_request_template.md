@@ -1,7 +1,7 @@
 * **Does the PR need any steps to deploy?
 - [ ] Bundle
 - [ ] Migration
-- [ ] Run seed file
+- [ ] Run import_csv:load
 
 * **Please check if the PR fulfills these requirements**
 - [ ] The commit message follows our guidelines
