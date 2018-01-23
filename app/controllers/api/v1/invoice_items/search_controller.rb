@@ -1,9 +1,9 @@
 class Api::V1::InvoiceItems::SearchController < Api::V1::BaseSearchController
   def index
-    render json: InvoiceItem.serve.where(search(params))
+    render json: InvoiceItem.order("id ASC").where(search(params))
   end
 
   def show
-    render json: InvoiceItem.serve.where(search(params)).first
+    render json: InvoiceItem.order("id ASC").where(search(params)).first
   end
 end

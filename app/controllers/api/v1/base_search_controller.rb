@@ -26,5 +26,4 @@ class Api::V1::BaseSearchController < ApplicationController
       {updated_at: params[:updated_at]}
     end
   end
-
 end
