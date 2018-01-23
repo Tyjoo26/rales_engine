@@ -96,6 +96,72 @@ describe "Invoice API" do
   end
 
   context "GET all invoices with" do
+    it "invoice id" do
+      invoice = create(:invoice)
 
+      get "/api/v1/invoices/find_all?id=#{invoice.id}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
+
+    it "customer id" do
+      invoice = create(:invoice)
+
+      get "/api/v1/invoices/find_all?customer_id=#{invoice.customer_id}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
+
+    it "merchant id" do
+      invoice = create(:invoice)
+
+      get "/api/v1/invoices/find_all?merchant_id=#{invoice.merchant_id}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
+
+    it "status" do
+      invoice = create(:invoice)
+
+      get "/api/v1/invoices/find_all?status=#{invoice.status}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
+
+    it "created at" do
+      invoice = create(:invoice)
+      date = (invoice.created_at)
+
+      get "/api/v1/invoices/find_all?created_at=#{date}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
+
+    it "updated at" do
+      invoice = create(:invoice)
+      date = (invoice.updated_at)
+
+      get "/api/v1/invoices/find_all?updated_at=#{invoice.updated_at}"
+
+      response_invoice = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(response_invoice["id"]).to eq(invoice.id)
+    end
   end
 end
