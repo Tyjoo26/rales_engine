@@ -1,4 +1,4 @@
-class Api::V1::Items::SearchController < Api::V1::BaseSearchController
+class Api::V1::Items::SearchController < ApplicationController
   def show
     render json: Item.order("id ASC").where(search_params).first
   end
