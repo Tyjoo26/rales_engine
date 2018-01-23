@@ -72,13 +72,14 @@ describe "Invoice Item API" do
 
     it "unit_price" do
       invoice_item = create_list(:invoice_item, 5).first
+      unit_price = (invoice_item.unit_price/100.00).to_s
 
-      get "/api/v1/invoice_items/find?unit_price=#{invoice_item.unit_price}"
+      get "/api/v1/invoice_items/find?unit_price=#{unit_price}"
 
       response_invoice_item = JSON.parse(response.body)
 
       expect(response).to be_success
-      expect(response_invoice_item["id"].to_i).to eq(invoice_item.id)
+      expect(response_invoice_item["id"]).to eq(invoice_item.id)
     end
 
     it "created_at" do
@@ -158,8 +159,9 @@ describe "Invoice Item API" do
     it "unit_price" do
       create_list(:invoice_item, 4)
       invoice_item = create_list(:invoice_item, 5, unit_price: "2.42").first
+      unit_price = (invoice_item.unit_price/100.00).to_s
 
-      get "/api/v1/invoice_items/find_all?unit_price=#{invoice_item.unit_price}"
+      get "/api/v1/invoice_items/find_all?unit_price=#{unit_price}"
 
       response_invoice_items = JSON.parse(response.body)
 
@@ -191,4 +193,14 @@ describe "Invoice Item API" do
       expect(response_invoice_items.count).to eq(5)
     end
   end
-end
+
+  context "GET random invoice_item" do
+    it "returns a success response" do
+      create_list(:invoice_item, 4, updated_at: DateTime.yesterday)
+
+      get "/api/v1/invoice_items/random"
+
+      expect(response).to be_success
+    end
+  end
+ end

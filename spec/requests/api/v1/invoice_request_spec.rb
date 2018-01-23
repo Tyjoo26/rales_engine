@@ -166,4 +166,14 @@ describe "Invoice API" do
       expect(response_invoice.count).to eq(5)
     end
   end
+
+  context "GET random invoice" do
+    it "returns a success response" do
+      create_list(:invoice, 4)
+
+      get "/api/v1/invoices/random"
+
+      expect(response).to be_success
+    end
+  end
 end
