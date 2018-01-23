@@ -41,7 +41,7 @@ namespace :import_csv do
       Item.create!(id: row[:id],
                   name: row[:name],
                   description: row[:description],
-                  unit_price: row[:unit_price],
+                  unit_price: (row[:unit_price]/100.00).to_s,
                   merchant_id: row[:merchant_id],
                   created_at: row[:created_at],
                   updated_at: row[:updated_at])
@@ -64,7 +64,7 @@ namespace :import_csv do
         item_id: row[:item_id],
         invoice_id: row[:invoice_id],
         quantity: row[:quantity],
-        unit_price: row[:unit_price],
+        unit_price: (row[:unit_price]/100.00).to_s,
         created_at: row[:created_at],
         updated_at: row[:updated_at])
     end
