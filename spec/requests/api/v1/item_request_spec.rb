@@ -61,8 +61,9 @@ describe "Item API" do
 
     it "unit_price" do
       item = create_list(:item, 5).first
+      unit_price = (item.unit_price/100.00).to_s
 
-      get "/api/v1/items/find?unit_price=#{item.unit_price}"
+      get "/api/v1/items/find?unit_price=#{unit_price}"
 
       response_item = JSON.parse(response.body)
 
@@ -141,8 +142,9 @@ describe "Item API" do
 
     it "unit_price" do
       item = create_list(:item, 5).first
+      unit_price = (item.unit_price/100.00).to_s
 
-      get "/api/v1/items/find_all?unit_price=#{item.unit_price}"
+      get "/api/v1/items/find_all?unit_price=#{unit_price}"
 
       response_item = JSON.parse(response.body)
 
@@ -182,6 +184,16 @@ describe "Item API" do
 
       expect(response).to be_success
       expect(response_item.count).to eq(5)
+    end
+  end
+
+  context "GET random invoice" do
+    it "returns a success response" do
+      create_list(:item, 4)
+
+      get "/api/v1/items/random"
+
+      expect(response).to be_success
     end
   end
 end
