@@ -31,6 +31,62 @@ Follow these instructions:
 #### Transactions
 
 #### Customers
+* Return all customers `GET /api/v1/customers`
+```
+[
+  {
+    "id": 1,
+    "first_name": "Joey",
+    "last_name": "Ondricka"
+  },
+  {
+    "id": 2,
+    "first_name": "Cecelia",
+    "last_name": "Osinski"
+  }
+]
+```
+* Return customer by id `GET /api/v1/customers/:id`
+```
+{
+  "id": 5,
+  "first_name": "Sylvester",
+  "last_name": "Nader"
+}
+```
+
+Search Field | example parameter
+--- | ---
+customer id | id=27
+first name | first_name=Germaine
+last name | last_name=Kirlin
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Find first customer by field `GET /api/v1/customers/find?parameter`
+```
+{
+  "id": 3,
+  "first_name": "Mariah",
+  "last_name": "Toy"
+}
+```
+* Find all customers by field `GET /api/v1/customers/find_all?parameter`
+```
+[
+  {
+    "id": 477,
+    "first_name": "Josefina",
+    "last_name": "Yost"
+  },
+  {
+    "id": 478,
+    "first_name": "Mafalda",
+    "last_name": "Labadie"
+  }
+]
+```
+
 
 #### Invoices
 * Return all invoices `GET /api/v1/invoices`
@@ -239,6 +295,8 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   }
 ]
 ```
+
+
 ### Business Intelligence Endpoints
 #### Merchants
 * Return top `X` Merchants ranked by total revenue `GET /api/v1/merchants/most_revenue?quantity=X`
@@ -268,6 +326,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   "last_name": "Smith"
 }
 ```
+
 
 #### Items
 * Return top `X` Items ranked by total_revenue `GET /api/v1/items/most_revenue?quantity=X`

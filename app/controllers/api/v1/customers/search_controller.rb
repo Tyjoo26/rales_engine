@@ -1,6 +1,4 @@
 class Api::V1::Customers::SearchController < ApplicationController
-
-
   def show
     render json: Customer.where(customer_params).first
   end
