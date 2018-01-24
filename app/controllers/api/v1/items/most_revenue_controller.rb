@@ -1,12 +1,5 @@
 class Api::V1::Items::MostRevenueController < ApplicationController
   def index
-    items = Item.select("items.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
-                .joins(:invoice_items)
-                .group("items.id")
-                .order("revenue DESC, items.id ASC")
-                .limit(params[:quantity])
-
-    render json: items
+    render json: Item.most_revenue(params[:quantity])
   end
-
 end
