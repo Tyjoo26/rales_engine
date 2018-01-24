@@ -48,7 +48,7 @@ describe "Merchants API" do
       expect(merchant_response[:name]).to eq(merchant.name)
     end
 
-    it "can find a merchant by updated_at" do
+    it "can find a merchant by created_at" do
       merchant = create_list(:merchant, 5).first
 
       get "/api/v1/merchants/find?created_at=#{merchant.created_at}"
