@@ -3,9 +3,10 @@ describe "Mechants API" do
     it "returns total revenue for a merchant" do
       created_date = "2012-03-16"
       merchant = create(:merchant)
-      successful = create(:transaction, result: 0)
-      invoice_1 = create(:invoice, merchant: merchant, transactions: [successful], created_at: created_date)
-      invoice_2 = create(:invoice, merchant: merchant, transactions: [successful], created_at: created_date)
+      successful_1 = create(:transaction, result: 0)
+      successful_2 = create(:transaction, result: 0)
+      invoice_1 = create(:invoice, merchant: merchant, transactions: [successful_1], created_at: created_date)
+      invoice_2 = create(:invoice, merchant: merchant, transactions: [successful_2], created_at: created_date)
       create_list(:invoice_item, 5, quantity: 1, unit_price: 10, invoice: invoice_1)
       create_list(:invoice_item, 5, quantity: 1, unit_price: 10, invoice: invoice_2)
 
@@ -14,7 +15,7 @@ describe "Mechants API" do
       total_revenue = JSON.parse(response.body)
 
       expect(response).to be_successful
-      expect(total_revenue).to eq("1.00")
+      expect(total_revenue["total_revenue"]).to eq("1.00")
     end
 
     it "only returns total revenue for successful transactions" do
@@ -32,7 +33,7 @@ describe "Mechants API" do
       total_revenue = JSON.parse(response.body)
 
       expect(response).to be_successful
-      expect(total_revenue).to eq("0.50")
+      expect(total_revenue["total_revenue"]).to eq("0.50")
     end
   end
 end
