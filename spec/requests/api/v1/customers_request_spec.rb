@@ -81,4 +81,71 @@ describe "Customers API" do
       expect(customer_response[:id]).to eq(customer.id)
     end
   end
+
+  context "find all queries" do
+     it "finds all customers by id" do
+       customers = create_list(:customer, 4)
+       customer_id = create(:customer).id
+ 
+       get "/api/v1/customers/find_all?id=#{customer_id}"
+ 
+       expect(response).to be_success
+ 
+       customer_response = JSON.parse(response.body, symbolize_names:true)
+ 
+       expect(customer_response.count).to eq(1)
+     end
+ 
+     it "finds all customers by first_name" do
+       customer = create_list(:customer, 4).first
+ 
+ 
+       get "/api/v1/customers/find_all?first_name=#{customer.first_name}"
+ 
+       expect(response).to be_success
+ 
+       customer_response = JSON.parse(response.body, symbolize_names:true)
+ 
+       expect(customer_response.count).to eq(4)
+     end
+ 
+     it "finds all customers by last_name" do
+       customer = create_list(:customer, 4).first
+ 
+ 
+       get "/api/v1/customers/find_all?last_name=#{customer.last_name}"
+ 
+       expect(response).to be_success
+ 
+       customer_response = JSON.parse(response.body, symbolize_names:true)
+ 
+       expect(customer_response.count).to eq(4)
+     end
+ 
+     it "finds all customers by created_at" do
+       customer = create_list(:customer, 4)
+       customer_1 = create(:customer)
+ 
+       get "/api/v1/customers/find_all?created_at=#{customer_1.created_at}"
+ 
+       expect(response).to be_success
+ 
+       customer_response = JSON.parse(response.body, symbolize_names:true)
+ 
+       expect(customer_response.count).to eq(5)
+     end
+ 
+     it "finds all customers by updated_at" do
+       customer = create_list(:customer, 4)
+       customer_1 = create(:customer, updated_at: DateTime.yesterday)
+ 
+       get "/api/v1/customers/find_all?updated_at=#{customer_1.updated_at}"
+ 
+       expect(response).to be_success
+ 
+       customer_response = JSON.parse(response.body, symbolize_names:true)
+ 
+       expect(customer_response.count).to eq(1)
+     end
+   end
 end
