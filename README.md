@@ -242,6 +242,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 ### Business Intelligence Endpoints
 #### Merchants
 * Return top `X` Merchants ranked by total revenue `GET /api/v1/merchants/most_revenue?quantity=X`
+```
 [
   {
     "id": 14,
@@ -252,5 +253,39 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
     "name": "Kassulke, O'Hara and Quitzon"
   }
 ]
-
+```
 * Return total revenue by date (YYYY-MM-DD) `GET /api/v1/merchants/revenue?date=x`
+```
+{
+  "total_revenue": "2495397.37"
+}
+```
+* Return a single Merchants favorite customer `GET /api/v1/merchants/:id/favorite_customer`
+```
+{
+  "id": 988,
+  "first_name": "Efren",
+  "last_name": "Smith"
+}
+```
+
+#### Items
+* Return top `X` Items ranked by total_revenue `GET /api/v1/items/most_revenue?quantity=X`
+```
+[
+  {
+    "id": 227,
+    "name": "Item Dicta Autem",
+    "description": "Fugiat est ut eum impedit vel et. Deleniti quia debitis similique. Sint atque explicabo similique est. Iste fugit quis voluptas. Rerum ut harum sed fugiat eveniet ullam ut.",
+    "unit_price": "853.19",
+    "merchant_id": 14
+  },
+  {
+    "id": 2174,
+    "name": "Item Nam Magnam",
+    "description": "Eligendi quibusdam eveniet temporibus sed ratione ut magnam. Sit alias et. Laborum dignissimos quos impedit excepturi molestiae.",
+    "unit_price": "788.08",
+    "merchant_id": 89
+  }
+]
+```
