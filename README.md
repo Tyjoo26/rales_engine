@@ -10,13 +10,13 @@ Feel free to clone down the repo and give things a try.
 #### Initial Setup
 * `git clone https://github.com/Tyjoo26/rales_engine.git` ((don't have git?)[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git])
 * `bundle` ((don't have bundler?)[http://bundler.io/])
-* `rails db:create db:migrate` 
+* `rails db:create db:migrate`
 * `rails import_csv:load` (imports sample data)
 * `rails server` (http://localhost:3000/)
 * `rspec` To run our test suite
 
 #### Spec Harness Setup
-Initial setup must be done prior to running the [spec harness](https://github.com/turingschool/rales_engine_spec_harness). 
+Initial setup must be done prior to running the [spec harness](https://github.com/turingschool/rales_engine_spec_harness).
 Follow these instructions:
 * Boot the rails server in terminal (1): `rails server`
 * In another terminal instance (2): `git clone https://github.com/turingschool/rales_engine_spec_harness.git`
@@ -27,13 +27,179 @@ Follow these instructions:
 ## Endpoints
 ### Record Endpoints
 #### Merchants
+* Return all merchants `GET /api/v1/merchants`
+```
+[
+  {
+    "id": 1,
+    "name": "Schroeder-Jerde"
+  },
+  {
+    "id": 2,
+    "name": "Klein, Rempel and Jones"
+  }
+]
+```
+* Return specific merchant `GET /api/v1/merchants/:id`
+```
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}
+```
+
+Search Field | example parameter
+--- | ---
+transaction id | id=27
+invoice id | invoice_id=2
+result | result=success or result=failed
+credit card number | credit_card_number=4515551623735607
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Return first merchant by field `GET /api/v1/merchants/find?parameter`
+```
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}
+```
+
+* Return all merchant by field `GET /api/v1/merchant/find?parameter`
+```
+[
+  {
+    "id": 2,
+    "name": "Klein, Rempel and Jones"
+  }
+]
+```
 
 #### Transactions
+* Return all transactions `GET /api/v1/transactions`
+```
+[
+  {
+    "id": 1,
+    "credit_card_number": "4654405418249632",
+    "invoice_id": 1,
+    "result": "success"
+  },
+  {
+    "id": 2,
+    "credit_card_number": "4580251236515201",
+    "invoice_id": 2,
+    "result": "success"
+  }
+]
+```
+* Return specific transaction `GET /api/v1/transactions/:id`
+```
+{
+  "id": 4,
+  "credit_card_number": "4515551623735607",
+  "invoice_id": 5,
+  "result": "success"
+}
+```
+
+Search Field | example parameter
+--- | ---
+transaction id | id=27
+invoice id | invoice_id=2
+result | result=success or result=failed
+credit card number | credit_card_number=4515551623735607
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Return first transaction by field `GET /api/v1/transactions/find?parameter`
+```
+{
+  "id": 4,
+  "credit_card_number": "4515551623735607",
+  "invoice_id": 5,
+  "result": "success"
+}
+```
+
+* Return all transactions by field `GET /api/v1/transactions/find?parameter`
+```
+[
+  {
+    "id": 1,
+    "credit_card_number": "4654405418249632",
+    "invoice_id": 1,
+    "result": "success"
+  },
+  {
+    "id": 2,
+    "credit_card_number": "4580251236515201",
+    "invoice_id": 2,
+    "result": "success"
+  }
+]
+```
 
 #### Customers
+* Return all customers `GET /api/v1/customers`
+```
+[
+  {
+    "id": 1,
+    "first_name": "Joey",
+    "last_name": "Ondricka"
+  },
+  {
+    "id": 2,
+    "first_name": "Cecelia",
+    "last_name": "Osinski"
+  }
+]
+```
+* Return customer by id `GET /api/v1/customers/:id`
+```
+{
+  "id": 5,
+  "first_name": "Sylvester",
+  "last_name": "Nader"
+}
+```
+
+Search Field | example parameter
+--- | ---
+customer id | id=27
+first name | first_name=Germaine
+last name | last_name=Kirlin
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Find first customer by field `GET /api/v1/customers/find?parameter`
+```
+{
+  "id": 3,
+  "first_name": "Mariah",
+  "last_name": "Toy"
+}
+```
+* Find all customers by field `GET /api/v1/customers/find_all?parameter`
+```
+[
+  {
+    "id": 477,
+    "first_name": "Josefina",
+    "last_name": "Yost"
+  },
+  {
+    "id": 478,
+    "first_name": "Mafalda",
+    "last_name": "Labadie"
+  }
+]
+```
+
 
 #### Invoices
-* Return all invoices `/api/v1/invoices`
+* Return all invoices `GET /api/v1/invoices`
 ```
 [
   {
@@ -50,7 +216,7 @@ Follow these instructions:
   }
 ]
 ```
-* Return invoices by id `/api/v1/invoices/:id`
+* Return specific invoice by id `GET /api/v1/invoices/:id`
 ```
 {
   "id": 1,
@@ -61,15 +227,15 @@ Follow these instructions:
 ```
 
 Search Field | example parameter
---- | --- 
-invoice id | id=27 
-customer id | customer_id=24 
-merchant id | merchant_id=54 
-status | status=shipped 
-created at | created_at="2012-03-09T08:57:21.000Z" 
-updated at | updated_at="2012-03-09T08:57:21.000Z" 
+--- | ---
+invoice id | id=27
+customer id | customer_id=24
+merchant id | merchant_id=54
+status | status=shipped
+created at | created_at="2012-03-09T08:57:21.000Z"
+updated at | updated_at="2012-03-09T08:57:21.000Z"
 
-* Find first invoices by field `/api/v1/invoices/find?parameter`
+* Find first invoice by field `GET /api/v1/invoices/find?parameter`
 ```
 {
   "id": 1,
@@ -78,7 +244,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   "status": "shipped"
 }
 ```
-* Find all invoices by field `/api/v1/invoices/find_all?parameter`
+* Find all invoices by field `GET /api/v1/invoices/find_all?parameter`
 ```
 [
   {
@@ -98,7 +264,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 
 
 #### Items
-* Return all items `/api/v1/items`
+* Return all items `GET /api/v1/items`
 ```
 [
   {
@@ -117,7 +283,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   }
 ]
 ```
-* Return item by id `/api/v1/items/:id`
+* Return specific item by id `GET /api/v1/items/:id`
 ```
 {
   "id": 2,
@@ -129,16 +295,16 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 ```
 
 Search Field | example parameter
---- | --- 
-item id | id=27 
+--- | ---
+item id | id=27
 name | name="Item Explicabo Ipsam"
 description | description="facilis"
 unit_price | unit_price="19.99"
-merchant id | merchant_id=54 
-created at | created_at="2012-03-09T08:57:21.000Z" 
-updated at | updated_at="2012-03-09T08:57:21.000Z" 
+merchant id | merchant_id=54
+created at | created_at="2012-03-09T08:57:21.000Z"
+updated at | updated_at="2012-03-09T08:57:21.000Z"
 
-* Find first item by field `/api/v1/items/find?parameter`
+* Find first item by field `GET /api/v1/items/find?parameter`
 ```
 {
   "id": 201,
@@ -148,7 +314,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   "merchant_id": 10
 }
 ```
-* Find all items by field `/api/v1/items/find_all?parameter`
+* Find all items by field `GET /api/v1/items/find_all?parameter`
 ```
 [
   {
@@ -170,3 +336,125 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 
 
 #### Invoice Items
+* Return all invoice items `GET /api/v1/invoice_items`
+```
+[
+  {
+    "id": 1,
+    "item_id": 539,
+    "invoice_id": 1,
+    "quantity": 5,
+    "unit_price": "136.35"
+  },
+  {
+    "id": 2,
+    "item_id": 528,
+    "invoice_id": 1,
+    "quantity": 9,
+    "unit_price": "233.24"
+  }
+]
+```
+* Return specific invoice item by id `GET /api/v1/invoice_items/:id`
+```
+{
+  "id": 2,
+  "item_id": 528,
+  "invoice_id": 1,
+  "quantity": 9,
+  "unit_price": "233.24"
+}
+```
+
+Search Field | example parameter
+--- | ---
+invoice item id | id=27
+item id | item_id=3
+invoice id | invoice_id=2
+quantity | quantity=54
+unit_price | unit_price="19.99"
+created at | created_at="2012-03-09T08:57:21.000Z"
+updated at | updated_at="2012-03-09T08:57:21.000Z"
+
+* Find first item by field `GET /api/v1/invoice_items/find?parameter`
+```
+{
+  "id": 135,
+  "item_id": 1,
+  "invoice_id": 29,
+  "quantity": 2,
+  "unit_price": "751.07"
+}
+```
+* Find all items by field `GET /api/v1/items/find_all?parameter`
+```
+[
+  {
+    "id": 135,
+    "item_id": 1,
+    "invoice_id": 29,
+    "quantity": 2,
+    "unit_price": "751.07"
+  },
+  {
+    "id": 645,
+    "item_id": 1,
+    "invoice_id": 137,
+    "quantity": 7,
+    "unit_price": "751.07"
+  }
+]
+```
+
+
+### Business Intelligence Endpoints
+#### Merchants
+* Return top `X` Merchants ranked by total revenue `GET /api/v1/merchants/most_revenue?quantity=X`
+```
+[
+  {
+    "id": 14,
+    "name": "Dicki-Bednar"
+  },
+  {
+    "id": 89,
+    "name": "Kassulke, O'Hara and Quitzon"
+  }
+]
+```
+* Return total revenue by date (YYYY-MM-DD) `GET /api/v1/merchants/revenue?date=x`
+```
+{
+  "total_revenue": "2495397.37"
+}
+```
+* Return a single Merchants favorite customer `GET /api/v1/merchants/:id/favorite_customer`
+```
+{
+  "id": 988,
+  "first_name": "Efren",
+  "last_name": "Smith"
+}
+```
+
+
+#### Items
+* Return top `X` Items ranked by total_revenue `GET /api/v1/items/most_revenue?quantity=X`
+```
+[
+  {
+    "id": 227,
+    "name": "Item Dicta Autem",
+    "description": "Fugiat est ut eum impedit vel et. Deleniti quia debitis similique. Sint atque explicabo similique est. Iste fugit quis voluptas. Rerum ut harum sed fugiat eveniet ullam ut.",
+    "unit_price": "853.19",
+    "merchant_id": 14
+  },
+  {
+    "id": 2174,
+    "name": "Item Nam Magnam",
+    "description": "Eligendi quibusdam eveniet temporibus sed ratione ut magnam. Sit alias et. Laborum dignissimos quos impedit excepturi molestiae.",
+    "unit_price": "788.08",
+    "merchant_id": 89
+  }
+]
+```
