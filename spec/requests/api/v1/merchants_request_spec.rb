@@ -107,5 +107,17 @@ describe "Merchants API" do
       expect(response).to be_success
       expect(merchant_response.count).to eq(4)
     end
+
+    it "with #updated_at" do
+      merchant = create_list(:merchant, 4,updated_at: DateTime.yesterday).first
+
+
+      get "/api/v1/merchants/find_all?updated_at=#{merchant.updated_at}"
+
+      merchant_response = JSON.parse(response.body)
+
+      expect(response).to be_success
+      expect(merchant_response.count).to eq(4)
+    end
   end
 end
