@@ -1,4 +1,4 @@
-class Api::V1::Items::RevenueController < ApplicationController
+class Api::V1::Items::MostRevenueController < ApplicationController
   def index
     items = Item.select("items.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
                 .joins(:invoice_items)
