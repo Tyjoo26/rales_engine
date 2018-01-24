@@ -13,9 +13,4 @@ class Api::V1::Merchants::TotalRevenueController < ApplicationController
 
     render json: {total_revenue: revenue_in_dollars(total_revenue)}
   end
-
-  private
-    def revenue_in_dollars(revenue)
-      '%.2f' % (revenue/100.00)
-    end
 end
