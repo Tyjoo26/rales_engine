@@ -25,6 +25,7 @@ class Customer < ApplicationRecord
                 JOIN invoices i ON c.id=i.customer_id
                 JOIN transactions t ON i.id=t.invoice_id
                 WHERE i.merchant_id = #{merchant}
-                  AND t.result = 0")
+                  AND t.result = 0
+                ORDER BY 1")
   end
 end
