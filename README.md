@@ -27,6 +27,53 @@ Follow these instructions:
 ## Endpoints
 ### Record Endpoints
 #### Merchants
+* Return all merchants `GET /api/v1/merchants`
+```
+[
+  {
+    "id": 1,
+    "name": "Schroeder-Jerde"
+  },
+  {
+    "id": 2,
+    "name": "Klein, Rempel and Jones"
+  }
+]
+```
+* Return specific merchant `GET /api/v1/merchants/:id`
+```
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}
+```
+
+Search Field | example parameter
+--- | ---
+transaction id | id=27
+invoice id | invoice_id=2
+result | result=success or result=failed
+credit card number | credit_card_number=4515551623735607
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Return first merchant by field `GET /api/v1/merchants/find?parameter`
+```
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}
+```
+
+* Return all merchant by field `GET /api/v1/merchant/find?parameter`
+```
+[
+  {
+    "id": 2,
+    "name": "Klein, Rempel and Jones"
+  }
+]
+```
 
 #### Transactions
 * Return all transactions `GET /api/v1/transactions`
