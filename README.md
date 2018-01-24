@@ -29,6 +29,69 @@ Follow these instructions:
 #### Merchants
 
 #### Transactions
+* Return all transactions `GET /api/v1/transactions`
+```
+[
+  {
+    "id": 1,
+    "credit_card_number": "4654405418249632",
+    "invoice_id": 1,
+    "result": "success"
+  },
+  {
+    "id": 2,
+    "credit_card_number": "4580251236515201",
+    "invoice_id": 2,
+    "result": "success"
+  }
+]
+```
+* Return specific transaction `GET /api/v1/transactions/:id`
+```
+{
+  "id": 4,
+  "credit_card_number": "4515551623735607",
+  "invoice_id": 5,
+  "result": "success"
+}
+```
+
+Search Field | example parameter
+--- | ---
+transaction id | id=27
+invoice id | invoice_id=2
+result | result=success or result=failed
+credit card number | credit_card_number=4515551623735607
+created at | created_at="2012-03-27T14:56:04.000Z"
+updated at | updated_at="2012-03-27T14:56:04.000Z"
+
+* Return first transaction by field `GET /api/v1/transactions/find?parameter`
+```
+{
+  "id": 4,
+  "credit_card_number": "4515551623735607",
+  "invoice_id": 5,
+  "result": "success"
+}
+```
+
+* Return all transactions by field `GET /api/v1/transactions/find?parameter`
+```
+[
+  {
+    "id": 1,
+    "credit_card_number": "4654405418249632",
+    "invoice_id": 1,
+    "result": "success"
+  },
+  {
+    "id": 2,
+    "credit_card_number": "4580251236515201",
+    "invoice_id": 2,
+    "result": "success"
+  }
+]
+```
 
 #### Customers
 * Return all customers `GET /api/v1/customers`
@@ -106,7 +169,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
   }
 ]
 ```
-* Return invoices by id `GET /api/v1/invoices/:id`
+* Return specific invoice by id `GET /api/v1/invoices/:id`
 ```
 {
   "id": 1,
@@ -125,7 +188,7 @@ status | status=shipped
 created at | created_at="2012-03-09T08:57:21.000Z"
 updated at | updated_at="2012-03-09T08:57:21.000Z"
 
-* Find first invoices by field `GET /api/v1/invoices/find?parameter`
+* Find first invoice by field `GET /api/v1/invoices/find?parameter`
 ```
 {
   "id": 1,
@@ -173,7 +236,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   }
 ]
 ```
-* Return item by id `GET /api/v1/items/:id`
+* Return specific item by id `GET /api/v1/items/:id`
 ```
 {
   "id": 2,
@@ -245,7 +308,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
   }
 ]
 ```
-* Return item by id `GET /api/v1/invoice_items/:id`
+* Return specific invoice item by id `GET /api/v1/invoice_items/:id`
 ```
 {
   "id": 2,
