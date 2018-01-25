@@ -108,11 +108,11 @@ var invoiceTransactions = ["GET /api/v1/invoices/:id/transactions", [
     "id": 2,
     "credit_card_number": "4580251236515201",
     "invoice_id": 1,
-    "result": "success"
+    "result": "failed"
   }
 ]]
 
-$("#invoice-transactons").click(function() {
+$("#invoice-transactions").click(function() {
   $("#search-params").html("")
   $("#example-request").html(invoiceTransactions[0])
   $("#example-output").html(JSON.stringify(invoiceTransactions[1], undefined, 2))
@@ -180,3 +180,9 @@ var invoiceMerchant = ["GET /api/v1/invoices/:id/merchant", {
   "id": 2,
   "name": "Klein, Rempel and Jones"
 }]
+
+$("#invoice-merchant").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceMerchant[0])
+  $("#example-output").html(JSON.stringify(invoiceMerchant[1], undefined, 2))
+});
