@@ -1,3 +1,11 @@
+# README
+
+Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)
+
+It was built by [Tim Joo](https://github.com/Tyjoo26) & [Max Stackhouse](https://github.com/Maxscores)
+
+Feel free to clone down the repo and give things a try.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -19,14 +27,6 @@
       - [Items](#items-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# README
-
-Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)
-
-It was built by [Tim Joo](https://github.com/Tyjoo26) & [Max Stackhouse](https://github.com/Maxscores)
-
-Feel free to clone down the repo and give things a try.
 
 ## Setup
 #### Initial Setup
