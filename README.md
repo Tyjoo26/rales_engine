@@ -8,6 +8,7 @@ Feel free to clone down the repo and give things a try.
 You can also [access the api](http://rales-engine-1710.herokuapp.com/) through herokuapp
 
 ## Setup
+You'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [bundler](http://bundler.io/).
 ### Spec Harness
 Initial setup must be done prior to running the [spec harness](https://github.com/Maxscores/rales_engine_spec_harness).
 Run these commands in terminal:
@@ -20,7 +21,7 @@ export BASE_URL=http://rales-engine-1710.herokuapp.com
 Run the tests with `bundle exec rake`
 
 ### Local Setup
-You'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [bundler](http://bundler.io/). To run our test suite.
+To run our test suite:
 ```
 git clone https://github.com/Tyjoo26/rales_engine.git
 bundle
