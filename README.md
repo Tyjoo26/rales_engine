@@ -1,3 +1,21 @@
+- [README](#readme)
+  - [Setup](#setup)
+      - [Initial Setup](#initial-setup)
+      - [Spec Harness Setup](#spec-harness-setup)
+  - [Endpoints](#endpoints)
+    - [Record Endpoints](#record-endpoints)
+      - [Merchants](#merchants)
+      - [Transactions](#transactions)
+      - [Customers](#customers)
+      - [Invoices](#invoices)
+      - [Items](#items)
+      - [Invoice Items](#invoice-items)
+    - [Business Intelligence Endpoints](#business-intelligence-endpoints)
+      - [Merchants](#merchants-1)
+      - [Items](#items-1)
+
+
+
 # README
 
 Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)
@@ -5,6 +23,7 @@ Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where 
 It was built by [Tim Joo](https://github.com/Tyjoo26) & [Max Stackhouse](https://github.com/Maxscores)
 
 Feel free to clone down the repo and give things a try.
+You can also [access the api](http://rales-engine-1710.herokuapp.com/) through herokuapp
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -29,22 +48,27 @@ Feel free to clone down the repo and give things a try.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Setup
-#### Initial Setup
-* `git clone https://github.com/Tyjoo26/rales_engine.git` ((don't have git?)[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git])
-* `bundle` ((don't have bundler?)[http://bundler.io/])
-* `rails db:create db:migrate`
-* `rails import_csv:load` (imports sample data)
-* `rails server` (http://localhost:3000/)
-* `rspec` To run our test suite
+You'll need [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [bundler](http://bundler.io/).
+### Spec Harness
+Initial setup must be done prior to running the [spec harness](https://github.com/Maxscores/rales_engine_spec_harness).
+Run these commands in terminal:
+```
+git clone https://github.com/Maxscores/rales_engine_spec_harness.git
+cd rales_engine_spec_harness
+bundle
+export BASE_URL=http://rales-engine-1710.herokuapp.com
+```
+Run the tests with `bundle exec rake`
 
-#### Spec Harness Setup
-Initial setup must be done prior to running the [spec harness](https://github.com/turingschool/rales_engine_spec_harness).
-Follow these instructions:
-* Boot the rails server in terminal (1): `rails server`
-* In another terminal instance (2): `git clone https://github.com/turingschool/rales_engine_spec_harness.git`
-* `cd rales_engine_spec_harness`
-* `bundle`
-* Run test squit: `rake`
+### Local Setup
+To run our test suite:
+```
+git clone https://github.com/Tyjoo26/rales_engine.git
+bundle
+rails db:create db:migrate
+rspec
+```
+
 
 ## Endpoints
 ### Record Endpoints
@@ -70,12 +94,10 @@ Follow these instructions:
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
-transaction id | id=27
-invoice id | invoice_id=2
-result | result=success or result=failed
-credit card number | credit_card_number=4515551623735607
+merchant id | id=27
+name | name=Merchant
 created at | created_at="2012-03-27T14:56:04.000Z"
 updated at | updated_at="2012-03-27T14:56:04.000Z"
 
@@ -163,7 +185,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 transaction id | id=27
 invoice id | invoice_id=2
@@ -235,7 +257,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 customer id | id=27
 first name | first_name=Germaine
@@ -329,7 +351,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 invoice id | id=27
 customer id | customer_id=24
@@ -397,12 +419,12 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 item id | id=27
-name | name="Item Explicabo Ipsam"
-description | description="facilis"
-unit_price | unit_price="19.99"
+name | name=Item Explicabo Ipsam
+description | description=facilis
+unit_price | unit_price=19.99
 merchant id | merchant_id=54
 created at | created_at="2012-03-09T08:57:21.000Z"
 updated at | updated_at="2012-03-09T08:57:21.000Z"
@@ -469,13 +491,13 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 invoice item id | id=27
 item id | item_id=3
 invoice id | invoice_id=2
 quantity | quantity=54
-unit_price | unit_price="19.99"
+unit_price | unit_price=19.99
 created at | created_at="2012-03-09T08:57:21.000Z"
 updated at | updated_at="2012-03-09T08:57:21.000Z"
 
