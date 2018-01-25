@@ -37,7 +37,7 @@ $("#merchants-total-revenue").click(function() {
 
 var merchantTotalRevenue = ["GET /api/v1/merchants/:id/revenue", {
   "id": 3,
-  "total_revenue": "120.00"
+  "total_revenue": "25604.00"
 }]
 
 $("#merchant-total-revenue").click(function() {
@@ -87,7 +87,8 @@ $("#merchant-customers-pending").click(function() {
   $("#example-output").html(JSON.stringify(merchantCustomersPending[1], undefined, 2))
 })
 
-var topItemsRevenue = ["GET /api/v1/items/most_revenue?quantity=x (returns X items)"[
+var topItemsRevenue = ["GET /api/v1/items/most_revenue?quantity=x (returns X items)",
+[
   {
     "id": 227,
     "name": "Item Dicta Autem",
