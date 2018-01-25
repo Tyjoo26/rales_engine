@@ -42,9 +42,12 @@ export BASE_URL=http://rales-engine-1710.herokuapp.com
 Run the tests with `bundle exec rake`
 
 ### Local Setup
-`git clone https://github.com/Tyjoo26/rales_engine.git` (don't have git?)[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git]
-`bundle` (don't have bundler?)[http://bundler.io/]
+`git clone https://github.com/Tyjoo26/rales_engine.git` [don't have git?](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+`bundle` [don't have bundler?](http://bundler.io/)
+
 `rails db:create db:migrate`
+
 `rspec` To run our test suite
 
 
