@@ -43,6 +43,8 @@ Rails.application.routes.draw do
         get '/random', to: "random#show"
         get '/:id', to: 'invoices#show'
         get '/:id/transactions', to: "invoice_transactions#show"
+        get '/:id/invoice_items', to: "invoice_invoice_items#show"
+        get '/:id/items', to: "invoice_items#show"
       end
       namespace :items do
         get '', to: 'items#index'
