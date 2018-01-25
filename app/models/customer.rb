@@ -13,4 +13,19 @@ class Customer < ApplicationRecord
       .where("invoices.merchant_id = ?", merchant)
       .first
   end
+
+  def self.customers_with_pending_invoices(merchant)
+    find_by_sql("SELECT c.* FROM customers c
+                JOIN invoices i ON c.id=i.customer_id
+                JOIN transactions t ON i.id=t.invoice_id
+                WHERE i.merchant_id = #{merchant}
+                  AND t.result = 1
+                EXCEPT
+                SELECT c.* FROM customers c
+                JOIN invoices i ON c.id=i.customer_id
+                JOIN transactions t ON i.id=t.invoice_id
+                WHERE i.merchant_id = #{merchant}
+                  AND t.result = 0
+                ORDER BY 1")
+  end
 end
