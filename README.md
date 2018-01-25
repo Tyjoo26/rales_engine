@@ -75,6 +75,44 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 ]
 ```
 
+* Return all items for specific merchant `GET /api/v1/merchants/:id/items`
+```
+[
+  {
+    "id": 53,
+    "name": "Item Sunt Nesciunt",
+    "description": "Magni eos cupiditate animi. Ea consequatur saepe quo earum. In magni dolorem maxime tempora. Inventore iure ad delectus quo neque voluptates. Optio repellat occaecati.",
+    "unit_price": "711.98",
+    "merchant_id": 2
+  },
+  {
+    "id": 52,
+    "name": "Item Sit Facere",
+    "description": "Vero libero laboriosam qui expedita dignissimos. Deserunt aliquam et aut accusamus aut iure natus. Qui eveniet quidem. Et praesentium quos doloremque quidem aut ab. Eius doloribus aut nisi.",
+    "unit_price": "856.42",
+    "merchant_id": 2
+  }
+]
+```
+
+* Return all invoices for specific merchant `GET /api/v1/merchants/:id/invoices`
+```
+[
+  {
+    "id": 45,
+    "customer_id": 10,
+    "merchant_id": 2,
+    "status": "shipped"
+  },
+  {
+    "id": 77,
+    "customer_id": 16,
+    "merchant_id": 2,
+    "status": "shipped"
+  }
+]
+```
+
 #### Transactions
 * Return all transactions `GET /api/v1/transactions`
 ```
@@ -140,6 +178,16 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 ]
 ```
 
+* Return invoice for specific transaction `GET /api/v1/transactions/:id/invoice`
+```
+{
+  "id": 1,
+  "customer_id": 1,
+  "merchant_id": 26,
+  "status": "shipped"
+}
+```
+
 #### Customers
 * Return all customers `GET /api/v1/customers`
 ```
@@ -196,7 +244,40 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
   }
 ]
 ```
-
+* Return all invoices for specific customer `GET /api/v1/customers/:id/invoices`
+```
+[
+  {
+    "id": 13,
+    "customer_id": 3,
+    "merchant_id": 34,
+    "status": "shipped"
+  },
+  {
+    "id": 12,
+    "customer_id": 3,
+    "merchant_id": 8,
+    "status": "shipped"
+  }
+]
+```
+* Return all transactions for specific customer `GET /api/v1/customers/:id/invoices`
+```
+[
+  {
+    "id": 15,
+    "credit_card_number": "4869639160798434",
+    "invoice_id": 13,
+    "result": "failed"
+  },
+  {
+    "id": 13,
+    "credit_card_number": "4536896898764278",
+    "invoice_id": 12,
+    "result": "success"
+  }
+]
+```
 
 #### Invoices
 * Return all invoices `GET /api/v1/invoices`
