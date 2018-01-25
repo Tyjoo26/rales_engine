@@ -422,9 +422,9 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 Search Field | Example Parameter
 --- | ---
 item id | id=27
-name | name="Item Explicabo Ipsam"
-description | description="facilis"
-unit_price | unit_price="19.99"
+name | name=Item Explicabo Ipsam
+description | description=facilis
+unit_price | unit_price=19.99
 merchant id | merchant_id=54
 created at | created_at="2012-03-09T08:57:21.000Z"
 updated at | updated_at="2012-03-09T08:57:21.000Z"

@@ -2,110 +2,15 @@ $.getScript("js/merchants.js", function() {});
 $.getScript("js/transactions.js", function() {});
 $.getScript("js/customers.js", function() {});
 $.getScript("js/invoices.js", function() {});
+$.getScript("js/items.js", function() {});
+$.getScript("js/invoice_items.js", function() {});
 
 
 
 
 
-var allItems = [
-  {
-    "id": 1,
-    "name": "Item Qui Esse",
-    "description": "Nihil autem sit odio inventore deleniti. Est laudantium ratione distinctio laborum. Minus voluptatem nesciunt assumenda dicta voluptatum porro.",
-    "unit_price": "751.07",
-    "merchant_id": 1
-  },
-  {
-    "id": 2,
-    "name": "Item Autem Minima",
-    "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
-    "unit_price": "670.76",
-    "merchant_id": 1
-  }
-];
 
-var oneItem = {
-  "id": 2,
-  "name": "Item Autem Minima",
-  "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
-  "unit_price": "670.76",
-  "merchant_id": 1
-};
 
-var searchManyItems = [
-  {
-    "id": 201,
-    "name": "Item Explicabo Ipsam",
-    "description": "Est facilis sunt molestias nam praesentium aspernatur. Reiciendis tenetur culpa at repellat. Non illum nesciunt. Sed vel et odio sint. Nemo sequi minima inventore.",
-    "unit_price": "774.09",
-    "merchant_id": 10
-  },
-  {
-    "id": 202,
-    "name": "Item Molestias Molestiae",
-    "description": "Doloremque qui recusandae modi unde. Vitae consequatur commodi recusandae sunt occaecati et. Autem vel sit quos voluptatem excepturi.",
-    "unit_price": "814.97",
-    "merchant_id": 10
-  }
-];
-
-var searchOneItem = {
-  "id": 201,
-  "name": "Item Explicabo Ipsam",
-  "description": "Est facilis sunt molestias nam praesentium aspernatur. Reiciendis tenetur culpa at repellat. Non illum nesciunt. Sed vel et odio sint. Nemo sequi minima inventore.",
-  "unit_price": "774.09",
-  "merchant_id": 10
-};
-
-var allInvoiceItems = [
-  {
-    "id": 1,
-    "item_id": 539,
-    "invoice_id": 1,
-    "quantity": 5,
-    "unit_price": "136.35"
-  },
-  {
-    "id": 2,
-    "item_id": 528,
-    "invoice_id": 1,
-    "quantity": 9,
-    "unit_price": "233.24"
-  }
-];
-
-var oneInvoiceItem = {
-  "id": 2,
-  "item_id": 528,
-  "invoice_id": 1,
-  "quantity": 9,
-  "unit_price": "233.24"
-};
-
-var searchManyInvoiceItems = [
-  {
-    "id": 135,
-    "item_id": 1,
-    "invoice_id": 29,
-    "quantity": 2,
-    "unit_price": "751.07"
-  },
-  {
-    "id": 645,
-    "item_id": 1,
-    "invoice_id": 137,
-    "quantity": 7,
-    "unit_price": "751.07"
-  }
-];
-
-var searchOneInvoiceItem = {
-  "id": 135,
-  "item_id": 1,
-  "invoice_id": 29,
-  "quantity": 2,
-  "unit_price": "751.07"
-};
 
 var topMerchantsRevenue = [
   {
