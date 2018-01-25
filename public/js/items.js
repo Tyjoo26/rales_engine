@@ -36,8 +36,9 @@ $("#one-item").click(function() {
 });
 
 var itemSearchParams = `
+<h3>Search Details</h3>
 <table>
-  <th>Search Field</th>
+  <th>Field</th>
   <th>Example Parameter</th>
   <tr>
     <td>item id</td>

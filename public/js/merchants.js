@@ -28,8 +28,9 @@ $("#one-merchant").click(function() {
 });
 
 var merchantSearchParams = `
+<h3>Search Details</h3>
 <table>
-  <th>Search Field</th>
+  <th>Field</th>
   <th>Example Parameter</th>
   <tr>
     <td>merchant id</td>

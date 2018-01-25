@@ -30,8 +30,9 @@ $("#one-customer").click(function() {
 });
 
 var customerSearchParams = `
+<h3>Search Details</h3>
 <table>
-  <th>Search Field</th>
+  <th>Field</th>
   <th>Example Parameter</th>
   <tr>
     <td>customer id</td>

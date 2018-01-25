@@ -3,7 +3,10 @@ ul {
   padding: 0;
 
 }
-
+button {
+  padding: 3px;
+  margin: 2px;
+}
 .full-width {
   display: flex;
   flex-direction: row;
@@ -13,7 +16,7 @@ ul {
   width: 60%;
   padding: 0 10px 0 10px;
   overflow-y: scroll;
-  height: 450px;
+  height: 500px;
 }
 
 .right-half {
@@ -22,9 +25,6 @@ ul {
   background-color: lightgrey;
 }
 
-.title {
-  color: blue;
-}
 .endpoint-big-box {
   display: flex;
   flex-wrap: wrap;
