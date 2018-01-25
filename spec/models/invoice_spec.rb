@@ -63,13 +63,50 @@ RSpec.describe Invoice, type: :model do
     end
 
     context "::most_items_sold(quantity)" do
-      it "returns " do
+      before(:each) do
+        @merchants = create_list(:merchant, 3)
+        invoice = create(:invoice, merchant: @merchants.first)
+        transaction = create(:transaction, invoice: invoice)
+        invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 2)
 
+        invoice = create(:invoice, merchant: @merchants.second)
+        transaction = create(:transaction, invoice: invoice)
+        invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 4)
+
+        invoice = create(:invoice, merchant: @merchants.third)
+        transaction = create(:transaction, invoice: invoice)
+        invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 6)
+
+      end
+
+      it "returns top 1 merchants by item sold" do
+        top_merchants = Invoice.most_items_sold(1)
+
+        expect(top_merchants.first.id).to eq(@merchants.last.id)
+      end
+
+      it "returns top 3 merchants by item sold" do
+        top_merchants = Invoice.most_items_sold(3)
+
+        expect(top_merchants.first.id).to eq(@merchants.last.id)
+        expect(top_merchants.last.id).to eq(@merchants.first.id)
       end
     end
 
     context "::best_day(id)" do
+      it "returns a single items best day" do
+        item = create(:item)
+        invoice_list = create_list(:invoice, 5)
+        ii_list = create_list(:invoice_item, 5, invoice: invoice_list.first, item: item)
+        transaction_list = create_list(:transaction, 5, invoice: invoice_list.first)
+        invoice_list = create_list(:invoice, 2, updated_at: "2012-03-02T16:54:31.000Z")
+        ii_list = create_list(:invoice_item, 2, invoice: invoice_list.first, item: item)
+        transaction_list = create_list(:transaction, 5, invoice: invoice_list.first)
 
+        best_day = Invoice.best_day(item.id)
+
+        expect(best_day.created_at).to eq("2012-03-06T16:54:31.000Z")
+      end
     end
   end
 end
