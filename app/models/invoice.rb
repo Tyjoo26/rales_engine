@@ -43,4 +43,14 @@ class Invoice < ApplicationRecord
       .order("total_items DESC")
       .limit(quantity)
   end
+
+  def self.best_day(id)
+    select("invoices.*, count(invoices.*) AS count_all")
+      .joins(:invoice_items, :items, :transactions)
+      .where(items: {id: id})
+      .merge(Transaction.successful)
+      .group(:id, :updated_at)
+      .order("count_all DESC")
+      .limit(1)[0]
+  end
 end
