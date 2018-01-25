@@ -7,22 +7,39 @@ button {
   padding: 3px;
   margin: 2px;
 }
-.full-width {
-  display: flex;
-  flex-direction: row;
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 4px;
+}
+tr {
+    background-color: #dddddd;
 }
 
-.left-half {
-  width: 60%;
-  padding: 0 10px 0 10px;
-  overflow-y: scroll;
+.full-width {
+  border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
   height: 500px;
 }
 
+.left-half {
+  background-color: #ededed;
+  width: 750px;
+  padding: 0 10px 0 10px;
+  overflow-y: scroll;
+}
+
 .right-half {
-  width: 40%;
-  padding: 0 0px 0 10px;
+  width: 450px;
+  padding: 0 10px 0 10px;
   background-color: lightgrey;
+  overflow-y: scroll;
 }
 
 .endpoint-big-box {
