@@ -1,3 +1,21 @@
+- [README](#readme)
+  - [Setup](#setup)
+      - [Initial Setup](#initial-setup)
+      - [Spec Harness Setup](#spec-harness-setup)
+  - [Endpoints](#endpoints)
+    - [Record Endpoints](#record-endpoints)
+      - [Merchants](#merchants)
+      - [Transactions](#transactions)
+      - [Customers](#customers)
+      - [Invoices](#invoices)
+      - [Items](#items)
+      - [Invoice Items](#invoice-items)
+    - [Business Intelligence Endpoints](#business-intelligence-endpoints)
+      - [Merchants](#merchants-1)
+      - [Items](#items-1)
+
+
+
 # README
 
 Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)

@@ -1,0 +1,33 @@
+ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.full-width {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-half {
+  width: 60%;
+  padding: 0 10px 0 10px;
+}
+
+.right-half {
+  width: 40%;
+  background-color: lightgrey;
+  padding: 0 0px 0 10px;
+}
+
+.title {
+  color: blue;
+}
+.endpoint-big-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.endpoint-box {
+  padding: 5px;
+  margin: 5px;
+}
