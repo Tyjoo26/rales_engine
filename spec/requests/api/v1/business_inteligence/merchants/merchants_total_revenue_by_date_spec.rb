@@ -1,5 +1,5 @@
 describe "Mechants API" do
-  context "GET total merchant revenue by date" do
+  context "GET total revenue of all merchants by date" do
     it "returns total revenue for a merchant" do
       created_date = "2012-03-16"
       merchant = create(:merchant)
