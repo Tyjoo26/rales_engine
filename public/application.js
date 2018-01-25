@@ -1,53 +1,11 @@
 $.getScript("js/merchants.js", function() {});
 $.getScript("js/transactions.js", function() {});
 $.getScript("js/customers.js", function() {});
+$.getScript("js/invoices.js", function() {});
 
 
 
 
-var allInvoices = [
-  {
-    "id": 1,
-    "customer_id": 1,
-    "merchant_id": 26,
-    "status": "shipped"
-  },
-  {
-    "id": 2,
-    "customer_id": 1,
-    "merchant_id": 75,
-    "status": "shipped"
-  }
-];
-
-var oneInvoices = {
-  "id": 1,
-  "customer_id": 1,
-  "merchant_id": 26,
-  "status": "shipped"
-};
-
-var searchAllInvoices = [
-  {
-    "id": 20,
-    "customer_id": 4,
-    "merchant_id": 10,
-    "status": "shipped"
-  },
-  {
-    "id": 161,
-    "customer_id": 31,
-    "merchant_id": 10,
-    "status": "shipped"
-  }
-];
-
-var searchOneInvoice = {
-  "id": 1,
-  "customer_id": 1,
-  "merchant_id": 26,
-  "status": "shipped"
-};
 
 var allItems = [
   {

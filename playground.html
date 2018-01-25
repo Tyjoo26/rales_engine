@@ -2,16 +2,20 @@
   <th>Search Field</th>
   <th>Example Parameter</th>
   <tr>
-    <td>customer id</td>
+    <td>invoice id</td>
     <td>id=27</td>
   </tr>
   <tr>
-    <td>first name</td>
-    <td>first_name=Germaine</td>
+    <td>customer id</td>
+    <td>customer_id=24</td>
   </tr>
   <tr>
-    <td>last name</td>
-    <td>last_name=Kirlin</td>
+    <td>merchant id</td>
+    <td>merchant_id=34</td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>status=shipped</td>
   </tr>
   <tr>
     <td>created at</td>
@@ -22,3 +26,11 @@
     <td>updated_at="2012-03-27T14:56:04.000Z"</td>
   </tr>
 </table>
+
+
+
+$("#all-merchants").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(allMerchants[0])
+  $("#example-output").html(JSON.stringify(allMerchants[1], undefined, 2))
+});
