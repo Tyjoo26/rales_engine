@@ -1,114 +1,9 @@
-var oneMerchant = {
-  "merchant": {
-    "id": 2,
-    "name": "Klein, Rempel and Jones"
-  }
-};
+$.getScript("js/merchants.js", function() {});
+$.getScript("js/transactions.js", function() {});
+$.getScript("js/customers.js", function() {});
 
-var allMerchants = [
-  {
-    "id": 1,
-    "name": "Schroeder-Jerde"
-  },
-  {
-    "id": 2,
-    "name": "Klein, Rempel and Jones"
-  }
-];
 
-var searchAllMerchants = [
-  {
-    "id": 2,
-    "name": "Klein, Rempel and Jones"
-  }
-];
 
-var searchOneMerchant = {
-  "id": 2,
-  "name": "Klein, Rempel and Jones"
-};
-
-var allTransactions = [
-  {
-    "id": 1,
-    "credit_card_number": "4654405418249632",
-    "invoice_id": 1,
-    "result": "success"
-  },
-  {
-    "id": 2,
-    "credit_card_number": "4580251236515201",
-    "invoice_id": 2,
-    "result": "success"
-  }
-];
-
-var oneTransaction = {
-  "id": 4,
-  "credit_card_number": "4515551623735607",
-  "invoice_id": 5,
-  "result": "success"
-};
-
-var searchAllTransactions = [
-  {
-    "id": 1,
-    "credit_card_number": "4654405418249632",
-    "invoice_id": 1,
-    "result": "success"
-  },
-  {
-    "id": 2,
-    "credit_card_number": "4580251236515201",
-    "invoice_id": 2,
-    "result": "success"
-  }
-];
-
-var searchOneTransaction = {
-  "id": 4,
-  "credit_card_number": "4515551623735607",
-  "invoice_id": 5,
-  "result": "success"
-};
-
-var allCustomers = [
-  {
-    "id": 1,
-    "first_name": "Joey",
-    "last_name": "Ondricka"
-  },
-  {
-    "id": 2,
-    "first_name": "Cecelia",
-    "last_name": "Osinski"
-  }
-];
-
-var oneCustomer = {
-  "id": 5,
-  "first_name": "Sylvester",
-  "last_name": "Nader"
-};
-
-var searchAllCustomers = [
-  {
-    "id": 477,
-    "first_name": "Josefina",
-    "last_name": "Yost"
-  },
-  {
-    "id": 478,
-    "first_name": "Mafalda",
-    "last_name": "Labadie"
-  }
-];
-
-var searchOneCustomer = {
-  "id": 3,
-  "first_name": "Mariah",
-  "last_name": "Toy"
-};
 
 var allInvoices = [
   {
@@ -307,10 +202,3 @@ var topItemsRevenue = [
 var topItemsItems = {};
 var itemBestDay = {};
 var customerFavoriteMerchant = {};
-
-
-$(document).ready(function() {
-    $("#example-output").html(JSON.stringify(allMerchants, undefined, 2));
-});
-
-$(document).

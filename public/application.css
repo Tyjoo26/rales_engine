@@ -16,8 +16,11 @@ ul {
 
 .right-half {
   width: 40%;
-  background-color: lightgrey;
   padding: 0 0px 0 10px;
+}
+
+.example-box {
+  background-color: lightgrey;
 }
 
 .title {
@@ -30,4 +33,7 @@ ul {
 .endpoint-box {
   padding: 5px;
   margin: 5px;
+}
+.endpoint {
+
 }

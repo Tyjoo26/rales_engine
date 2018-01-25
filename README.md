@@ -94,12 +94,10 @@ rspec
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
-transaction id | id=27
-invoice id | invoice_id=2
-result | result=success or result=failed
-credit card number | credit_card_number=4515551623735607
+merchant id | id=27
+name | name=Merchant
 created at | created_at="2012-03-27T14:56:04.000Z"
 updated at | updated_at="2012-03-27T14:56:04.000Z"
 
@@ -187,7 +185,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 transaction id | id=27
 invoice id | invoice_id=2
@@ -259,7 +257,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 customer id | id=27
 first name | first_name=Germaine
@@ -353,7 +351,7 @@ updated at | updated_at="2012-03-27T14:56:04.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 invoice id | id=27
 customer id | customer_id=24
@@ -421,7 +419,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 item id | id=27
 name | name="Item Explicabo Ipsam"
@@ -493,7 +491,7 @@ updated at | updated_at="2012-03-09T08:57:21.000Z"
 }
 ```
 
-Search Field | example parameter
+Search Field | Example Parameter
 --- | ---
 invoice item id | id=27
 item id | item_id=3
