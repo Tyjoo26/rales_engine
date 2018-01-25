@@ -16,11 +16,9 @@ $("#all-merchants").click(function() {
 });
 
 var oneMerchant = ["GET /api/v1/merchants/:id" ,
-  {
-  "merchant": {
-    "id": 2,
-    "name": "Klein, Rempel and Jones"
-  }
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
 }];
 
 $("#one-merchant").click(function() {
@@ -99,7 +97,7 @@ $("#merchant-items").click(function() {
   $("#example-output").html(JSON.stringify(merchantItems[1], undefined, 2))
 })
 
-var merchantInvoices = ["GET /api/v1/merchants/:id/items", [
+var merchantInvoices = ["GET /api/v1/merchants/:id/invoices", [
   {
     "id": 45,
     "customer_id": 10,
