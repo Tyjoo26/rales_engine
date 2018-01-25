@@ -1,7 +1,7 @@
 class Api::V1::Customers::FavoriteMerchantController < ApplicationController
 
   def show
-    favorite_merchant = Merchant.select("merchants.*, count(invoices.*) AS count_all").joins(:transactions,:customers, :invoices).where(customers:{id: params[:id]}).where(transactions: {result: "success"}).group("merchants.id").order("count_all DESC").limit(1)[0]
+    favorite_merchant = Merchant.customer_favorite_merchant(params[:id])
 
     render json: favorite_merchant
   end
