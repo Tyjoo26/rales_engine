@@ -2,6 +2,7 @@ describe "GET top x merchants ranked by total number of items sold" do
   it "returns top 1 merchants" do
     merchant = create_list(:merchant, 3).first
     invoice = create(:invoice, merchant: merchant)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 2)
 
     get "/api/v1/merchants/most_items?quantity=1"
@@ -16,12 +17,15 @@ describe "GET top x merchants ranked by total number of items sold" do
   it "returns top 3 merchants" do
     merchants = create_list(:merchant, 3)
     invoice = create(:invoice, merchant: merchants.first)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 2)
 
     invoice = create(:invoice, merchant: merchants.second)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 4)
 
     invoice = create(:invoice, merchant: merchants.third)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 6)
 
     get "/api/v1/merchants/most_items?quantity=3"
@@ -37,9 +41,11 @@ describe "GET top x merchants ranked by total number of items sold" do
   it "returns top 2 merchants with same quantity" do
     merchants = create_list(:merchant, 3)
     invoice = create(:invoice, merchant: merchants.first)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 2)
 
     invoice = create(:invoice, merchant: merchants.second)
+    transaction = create(:transaction, invoice: invoice)
     invoice_items = create_list(:invoice_item, 5, invoice: invoice, quantity: 2)
 
 
