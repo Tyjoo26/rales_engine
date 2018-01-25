@@ -4,8 +4,8 @@ describe "Revenue Business Intelligence Methods" do
     customer = create(:customer)
     item = create(:item, merchant: merchant)
     invoice = create(:invoice,customer:customer, merchant:merchant)
-    invoice_items = create_list(:invoice_item, 4, unit_price: 200, quantity: 1, invoice: invoice, item: item)
-    transaction = create(:transaction, invoice: invoice)
+    create_list(:invoice_item, 4, unit_price: 200, quantity: 1, invoice: invoice, item: item)
+    create(:transaction, invoice: invoice)
 
     get "/api/v1/merchants/#{merchant.id}/revenue"
 
@@ -22,8 +22,8 @@ describe "Revenue Business Intelligence Methods" do
     customer = create(:customer)
     item = create(:item, merchant: merchant)
     invoice = create(:invoice,customer:customer, merchant:merchant)
-    invoice_items = create_list(:invoice_item, 4, unit_price: 200, quantity: 1, invoice: invoice, item: item)
-    transaction = create(:transaction, invoice: invoice)
+    create_list(:invoice_item, 4, unit_price: 200, quantity: 1, invoice: invoice, item: item)
+    create(:transaction, invoice: invoice)
 
     get "/api/v1/merchants/#{merchant.id}/revenue?date=#{invoice.created_at}"
 

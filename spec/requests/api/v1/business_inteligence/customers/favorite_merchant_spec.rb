@@ -17,8 +17,8 @@ describe "HTTP Request for Favorite Merchant" do
 
   it "displays the favorite merchant for a specific customer with other customer & merchant & transcation & invoice information" do
       customer = create(:customer)
-      merchant_list = create_list(:merchant, 5)
-      invoice_list = create_list(:invoice, 5, customer:customer, merchant:merchant_list.first)
+      favorite_merchant = create_list(:merchant, 5).first
+      invoice_list = create_list(:invoice, 5, customer:customer, merchant: favorite_merchant)
       transaction_list = create_list(:transaction, 10, invoice:invoice_list.first)
 
       customer_2 = create(:customer)
@@ -34,6 +34,6 @@ describe "HTTP Request for Favorite Merchant" do
 
       merchant_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(merchant_response[:id]).to eq(merchant_list.first.id)
+      expect(merchant_response[:id]).to eq(favorite_merchant.id)
   end
 end

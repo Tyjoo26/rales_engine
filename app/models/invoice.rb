@@ -6,7 +6,7 @@ class Invoice < ApplicationRecord
   has_many :items, through: :invoice_items
   enum status: ["shipped"]
 
-  def self.total_revenue(date)
+  def self.merchants_total_revenue(date)
     joins(:transactions)
       .joins(:invoice_items)
       .merge(Transaction.successful)
