@@ -96,3 +96,87 @@ $("#search-one-invoice").click(function() {
   $("#example-request").html(searchOneInvoice[0])
   $("#example-output").html(JSON.stringify(searchOneInvoice[1], undefined, 2))
 });
+
+var invoiceTransactions = ["GET /api/v1/invoices/:id/transactions", [
+  {
+    "id": 1,
+    "credit_card_number": "4654405418249632",
+    "invoice_id": 1,
+    "result": "success"
+  },
+  {
+    "id": 2,
+    "credit_card_number": "4580251236515201",
+    "invoice_id": 1,
+    "result": "success"
+  }
+]]
+
+$("#invoice-transactons").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceTransactions[0])
+  $("#example-output").html(JSON.stringify(invoiceTransactions[1], undefined, 2))
+});
+
+var invoiceInvoiceItems = ["GET /api/v1/invoices/:id/invoice_items", [
+  {
+    "id": 1,
+    "item_id": 539,
+    "invoice_id": 1,
+    "quantity": 5,
+    "unit_price": "136.35"
+  },
+  {
+    "id": 2,
+    "item_id": 528,
+    "invoice_id": 1,
+    "quantity": 9,
+    "unit_price": "233.24"
+  }
+]]
+
+$("#invoice-invoice-items").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceInvoiceItems[0])
+  $("#example-output").html(JSON.stringify(invoiceInvoiceItems[1], undefined, 2))
+});
+
+var invoiceItems = ["GET /api/v1/invoices/:id/items", [
+  {
+    "id": 1,
+    "name": "Item Qui Esse",
+    "description": "Nihil autem sit odio inventore deleniti. Est laudantium ratione distinctio laborum. Minus voluptatem nesciunt assumenda dicta voluptatum porro.",
+    "unit_price": "751.07",
+    "merchant_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Item Autem Minima",
+    "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
+    "unit_price": "670.76",
+    "merchant_id": 1
+  }
+]]
+
+$("#invoice-items").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceItems[0])
+  $("#example-output").html(JSON.stringify(invoiceItems[1], undefined, 2))
+});
+
+var invoiceCustomer = ["GET /api/v1/invoices/:id/customer", {
+  "id": 5,
+  "first_name": "Sylvester",
+  "last_name": "Nader"
+}]
+
+$("#invoice-customer").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceCustomer[0])
+  $("#example-output").html(JSON.stringify(invoiceCustomer[1], undefined, 2))
+});
+
+var invoiceMerchant = ["GET /api/v1/invoices/:id/merchant", {
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}]
