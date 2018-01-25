@@ -5,6 +5,7 @@ Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where 
 It was built by [Tim Joo](https://github.com/Tyjoo26) & [Max Stackhouse](https://github.com/Maxscores)
 
 Feel free to clone down the repo and give things a try.
+You can also [access the api](http://rales-engine-1710.herokuapp.com/) through herokuapp
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -29,7 +30,18 @@ Feel free to clone down the repo and give things a try.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Setup
-#### Initial Setup
+### Spec Harness
+Initial setup must be done prior to running the [spec harness](https://github.com/Maxscores/rales_engine_spec_harness).
+Run these commands in terminal:
+```
+git clone https://github.com/turingschool/rales_engine_spec_harness.git
+cd rales_engine_spec_harness
+bundle
+export BASE_URL=http://rales-engine-1710.herokuapp.com
+```
+Run the tests with `bundle exec rake`
+
+### Local Setup
 * `git clone https://github.com/Tyjoo26/rales_engine.git` ((don't have git?)[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git])
 * `bundle` ((don't have bundler?)[http://bundler.io/])
 * `rails db:create db:migrate`
@@ -37,14 +49,7 @@ Feel free to clone down the repo and give things a try.
 * `rails server` (http://localhost:3000/)
 * `rspec` To run our test suite
 
-#### Spec Harness Setup
-Initial setup must be done prior to running the [spec harness](https://github.com/turingschool/rales_engine_spec_harness).
-Follow these instructions:
-* Boot the rails server in terminal (1): `rails server`
-* In another terminal instance (2): `git clone https://github.com/turingschool/rales_engine_spec_harness.git`
-* `cd rales_engine_spec_harness`
-* `bundle`
-* Run test squit: `rake`
+
 
 ## Endpoints
 ### Record Endpoints
