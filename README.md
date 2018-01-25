@@ -41,4 +41,4 @@ rspec
 
 
 ## Endpoints
-We recommend visiting [Rales Engine](http://rales-engine-1710.herokuapp.com/) through herokuapp to get information about the endpoints. You should direct your API requests to http://rales-engine-1710.herokuapp.com/api/v1
+We recommend visiting [Rales Engine](http://rales-engine-1710.herokuapp.com/) through herokuapp to get information about the endpoints. You should direct your API requests to http://rales-engine-1710.herokuapp.com/api/v1/:endpoint
