@@ -106,3 +106,39 @@ $("#search-one-item").click(function() {
   $("#example-request").html(searchOneItem[0])
   $("#example-output").html(JSON.stringify(searchOneItem[1], undefined, 2))
 });
+
+var itemInvoiceItems = ["GET /api/v1/items/:id/invoice_items",
+[
+  {
+    "id": 135,
+    "item_id": 1,
+    "invoice_id": 29,
+    "quantity": 2,
+    "unit_price": "751.07"
+  },
+  {
+    "id": 645,
+    "item_id": 1,
+    "invoice_id": 137,
+    "quantity": 7,
+    "unit_price": "751.07"
+  }
+]]
+
+$("#item-invoice-items").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(itemInvoiceItems[0])
+  $("#example-output").html(JSON.stringify(itemInvoiceItems[1], undefined, 2))
+});
+
+var itemMerchant = ["GET /api/v1/items/:id/merchant",
+{
+  "id": 2,
+  "name": "Klein, Rempel and Jones"
+}]
+
+$("#item-merchant").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(itemMerchant[0])
+  $("#example-output").html(JSON.stringify(itemMerchant[1], undefined, 2))
+});
