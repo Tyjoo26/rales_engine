@@ -34,7 +34,7 @@ You can also [access the api](http://rales-engine-1710.herokuapp.com/) through h
 Initial setup must be done prior to running the [spec harness](https://github.com/Maxscores/rales_engine_spec_harness).
 Run these commands in terminal:
 ```
-git clone https://github.com/turingschool/rales_engine_spec_harness.git
+git clone https://github.com/Maxscores/rales_engine_spec_harness.git
 cd rales_engine_spec_harness
 bundle
 export BASE_URL=http://rales-engine-1710.herokuapp.com
