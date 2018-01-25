@@ -106,3 +106,34 @@ $("#search-one-invoice-item").click(function() {
   $("#example-request").html(searchOneInvoiceItem[0])
   $("#example-output").html(JSON.stringify(searchOneInvoiceItem[1], undefined, 2))
 });
+
+var invoiceItemsInvoice = ["GET /api/v1/invoice_items/:id/invoice",
+{
+  "id": 1,
+  "customer_id": 1,
+  "merchant_id": 26,
+  "status": "shipped"
+}
+]
+
+$("#invoice-items-invoice").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceItemsInvoice[0])
+  $("#example-output").html(JSON.stringify(invoiceItemsInvoice[1], undefined, 2))
+});
+
+var invoiceItemsItem = ["GET /api/v1/invoice_items/:id/item",
+{
+  "id": 2,
+  "name": "Item Autem Minima",
+  "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
+  "unit_price": "670.76",
+  "merchant_id": 1
+}
+]
+
+$("#invoice-items-item").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(invoiceItemsItem[0])
+  $("#example-output").html(JSON.stringify(invoiceItemsItem[1], undefined, 2))
+});
