@@ -497,7 +497,7 @@ invoice item id | id=27
 item id | item_id=3
 invoice id | invoice_id=2
 quantity | quantity=54
-unit_price | unit_price="19.99"
+unit_price | unit_price=19.99
 created at | created_at="2012-03-09T08:57:21.000Z"
 updated at | updated_at="2012-03-09T08:57:21.000Z"
 

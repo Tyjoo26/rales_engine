@@ -15,13 +15,11 @@ var allInvoiceItems = ["GET /api/v1/invoice_items", [
   }
 ]];
 
-
 $("#all-invoice-items").click(function() {
   $("#search-params").html("")
   $("#example-request").html(allInvoiceItems[0])
   $("#example-output").html(JSON.stringify(allInvoiceItems[1], undefined, 2))
 });
-
 
 var oneInvoiceItem = ["GET /api/v1/invoice_items/:id", {
   "id": 2,
@@ -30,6 +28,16 @@ var oneInvoiceItem = ["GET /api/v1/invoice_items/:id", {
   "quantity": 9,
   "unit_price": "233.24"
 }];
+
+$("#one-invoice-item").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(oneInvoiceItem[0])
+  $("#example-output").html(JSON.stringify(oneInvoiceItem[1], undefined, 2))
+});
+
+var invoiceItemSearchParams = `
+
+`
 
 var searchManyInvoiceItems = ["GET /api/v1/invoice_items/find_all?parameter", [
   {
