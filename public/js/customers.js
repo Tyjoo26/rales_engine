@@ -86,3 +86,45 @@ $("#search-one-customer").click(function() {
   $("#example-request").html(searchOneCustomer[0])
   $("#example-output").html(JSON.stringify(searchOneCustomer[1], undefined, 2))
 });
+
+var customerInvoices = ["GET /api/v1/customers/:id/invoices", [
+  {
+    "id": 13,
+    "customer_id": 3,
+    "merchant_id": 34,
+    "status": "shipped"
+  },
+  {
+    "id": 12,
+    "customer_id": 3,
+    "merchant_id": 8,
+    "status": "shipped"
+  }
+]];
+
+$("#customer-invoices").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(customerInvoices[0])
+  $("#example-output").html(JSON.stringify(customerInvoices[1], undefined, 2))
+});
+
+var customerTransactions = ["GET /api/v1/customers/:id/transactions", [
+  {
+    "id": 15,
+    "credit_card_number": "4869639160798434",
+    "invoice_id": 13,
+    "result": "failed"
+  },
+  {
+    "id": 13,
+    "credit_card_number": "4536896898764278",
+    "invoice_id": 12,
+    "result": "success"
+  }
+]];
+
+$("#customer-transactions").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(customerTransactions[0])
+  $("#example-output").html(JSON.stringify(customerTransactions[1], undefined, 2))
+});

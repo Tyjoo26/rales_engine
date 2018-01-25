@@ -1,4 +1,4 @@
-var allInvoices = ["GET /api/vi/invocies", [
+var allInvoices = ["GET /api/v1/invocies", [
   {
     "id": 1,
     "customer_id": 1,
@@ -19,7 +19,7 @@ $("#all-invoices").click(function() {
   $("#example-output").html(JSON.stringify(allInvoices[1], undefined, 2))
 });
 
-var oneInvoice = ["GET /api/vi/invocies/:id", {
+var oneInvoice = ["GET /api/v1/invocies/:id", {
   "id": 1,
   "customer_id": 1,
   "merchant_id": 26,
@@ -63,7 +63,7 @@ var invoiceSearchParams = `
 </table>
 `
 
-var searchAllInvoices = ["GET /api/vi/invocies/find_all?parmeter", [
+var searchAllInvoices = ["GET /api/v1/invocies/find_all?parmeter", [
   {
     "id": 20,
     "customer_id": 4,
@@ -84,7 +84,7 @@ $("#search-many-invoices").click(function() {
   $("#example-output").html(JSON.stringify(searchAllInvoices[1], undefined, 2))
 });
 
-var searchOneInvoice = ["GET /api/vi/invocies/find?parmeter", {
+var searchOneInvoice = ["GET /api/v1/invocies/find?parmeter", {
   "id": 1,
   "customer_id": 1,
   "merchant_id": 26,

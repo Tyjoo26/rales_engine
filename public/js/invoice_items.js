@@ -88,7 +88,7 @@ var searchManyInvoiceItems = ["GET /api/v1/invoice_items/find_all?parameter", [
 ]];
 
 $("#search-many-invoice-items").click(function() {
-  $("#search-params").html("")
+  $("#search-params").html(invoiceItemSearchParams)
   $("#example-request").html(searchManyInvoiceItems[0])
   $("#example-output").html(JSON.stringify(searchManyInvoiceItems[1], undefined, 2))
 });
@@ -102,7 +102,7 @@ var searchOneInvoiceItem = ["GET /api/v1/invoice_items/find?parameter", {
 }];
 
 $("#search-one-invoice-item").click(function() {
-  $("#search-params").html("")
+  $("#search-params").html(invoiceItemSearchParams)
   $("#example-request").html(searchOneInvoiceItem[0])
   $("#example-output").html(JSON.stringify(searchOneInvoiceItem[1], undefined, 2))
 });

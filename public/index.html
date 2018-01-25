@@ -13,7 +13,7 @@
       and <a href="https://github.com/Tyjoo26">Tim Joo</a> as a project at
       <a href="http://turing.io/">Turing School of Software and Design</a>
     </p>
-    <p>Click on Endpoint to view Example Route and Resurn Result</p>
+    <p>Click on Endpoint to view Example Request and Example Output</p>
     <div class="full-width">
       <div class="left-half">
         <h3>API Endpoints</h3>
@@ -22,55 +22,70 @@
           <div class="endpoint-box">
             <strong>Merchants</strong>
             <ul>
-              <li class="endoint" id="all-merchants"> All Merchants</li>
-              <li class="endoint" id="one-merchant"> One Merchant</li>
-              <li class="endoint" id="search-many-merchants"> Search for many Merchants</li>
-              <li class="endoint" id="search-one-merchant"> Search for one Merchant</li>
+              <li class="endpoint" id="all-merchants"> All Merchants</li>
+              <li class="endpoint" id="one-merchant"> One Merchant</li>
+              <li class="endpoint" id="search-many-merchants"> Search for many Merchants</li>
+              <li class="endpoint" id="search-one-merchant"> Search for one Merchant</li>
+              <li class="endpoint" id="merchant-items"> One Merchant's Items </li>
+              <li class="endpoint" id="merchant-invoices"> One Merchant's Invoices </li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Transactions</strong>
             <ul>
-              <li class="endoint" id="all-transactions"> All Transactions</li>
-              <li class="endoint" id="one-transaction"> One Transaction</li>
-              <li class="endoint" id="search-many-transactions"> Search for many Transactions</li>
-              <li class="endoint" id="search-one-transaction"> Search for one Transaction</li>
+              <li class="endpoint" id="all-transactions"> All Transactions</li>
+              <li class="endpoint" id="one-transaction"> One Transaction</li>
+              <li class="endpoint" id="search-many-transactions"> Search for many Transactions</li>
+              <li class="endpoint" id="search-one-transaction"> Search for one Transaction</li>
+              <li class="endpoint" id="transaction-invoice">One Transaction's Invoice</li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Customers</strong>
             <ul>
-              <li class="endoint" id="all-customers"> All Customers</li>
-              <li class="endoint" id="one-customer"> One Customer</li>
-              <li class="endoint" id="search-many-customers"> Search for many Customers</li>
-              <li class="endoint" id="search-one-customer"> Search for one Customer</li>
+              <li class="endpoint" id="all-customers"> All Customers</li>
+              <li class="endpoint" id="one-customer"> One Customer</li>
+              <li class="endpoint" id="search-many-customers"> Search for many Customers</li>
+              <li class="endpoint" id="search-one-customer"> Search for one Customer</li>
+              <li class="endpoint" id="customer-invoices"> One Customer's Invoices</li>
+              <li class="endpoint" id="customer-transactions"> One Customer's Transactions</li>
+
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Invoices</strong>
             <ul>
-              <li class="endoint" id="all-invoices"> All Invoices</li>
-              <li class="endoint" id="one-invoice"> One Invoice</li>
-              <li class="endoint" id="search-many-invoices"> Search for many Invoices</li>
-              <li class="endoint" id="search-one-invoice"> Search for one Invoice</li>
+              <li class="endpoint" id="all-invoices"> All Invoices</li>
+              <li class="endpoint" id="one-invoice"> One Invoice</li>
+              <li class="endpoint" id="search-many-invoices"> Search for many Invoices</li>
+              <li class="endpoint" id="search-one-invoice"> Search for one Invoice</li>
+              <li class="endpoint" id="invoice-transactions"> One Invoice's Transactions</li>
+              <li class="endpoint" id="invoice-invoice-items"> One Invoice's Invoice Items</li>
+              <li class="endpoint" id="invoice-items"> One Invoice's Items</li>
+              <li class="endpoint" id="invoice-customer"> One Invoice's Customer</li>
+              <li class="endpoint" id="invoice-merchant"> One Invoice's Merchant</li>
+
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Items</strong>
             <ul>
-              <li class="endoint" id="all-items"> All Items</li>
-              <li class="endoint" id="one-item"> One Item</li>
-              <li class="endoint" id="search-many-items"> Search for many Items</li>
-              <li class="endoint" id="search-one-item"> Search for one Item</li>
+              <li class="endpoint" id="all-items"> All Items</li>
+              <li class="endpoint" id="one-item"> One Item</li>
+              <li class="endpoint" id="search-many-items"> Search for many Items</li>
+              <li class="endpoint" id="search-one-item"> Search for one Item</li>
+              <li class="endpoint" id="item-invoice-items"> One Item's Invoice Items</li>
+              <li class="endpoint" id="item-merchant"> One Item's Merchant</li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Invoice Items</strong>
             <ul>
-              <li class="endoint" id="all-invoice-items"> All Invoice Items</li>
-              <li class="endoint" id="one-invoice-item"> One Invoice Item</li>
-              <li class="endoint" id="search-many-invoice-items"> Search for many Invoice Items</li>
-              <li class="endoint" id="search-one-invoice-item"> Search for one Invoice Item</li>
+              <li class="endpoint" id="all-invoice-items"> All Invoice Items</li>
+              <li class="endpoint" id="one-invoice-item"> One Invoice Item</li>
+              <li class="endpoint" id="search-many-invoice-items"> Search for many Invoice Items</li>
+              <li class="endpoint" id="search-one-invoice-item"> Search for one Invoice Item</li>
+              <li class="endpoint" id="transaction-invoice"> One Transaction's Invoice</li>
             </ul>
           </div>
         </div>
@@ -79,32 +94,32 @@
           <div class="endpoint-box">
             <strong>All Merchants</strong>
             <ul>
-              <li class="endoint" id="top-merchants-revenue"> Top Merchants by Total Revenue </li>
-              <li class="endoint" id="top-merchants-items"> Top Merchants by Total Items Sold </li>
-              <li class="endoint" id="merchants-total-revenue"> Total Revenue of All Merchants on Date </li>
+              <li class="endpoint" id="top-merchants-revenue"> Top Merchants by Total Revenue </li>
+              <li class="endpoint" id="top-merchants-items"> Top Merchants by Total Items Sold </li>
+              <li class="endpoint" id="merchants-total-revenue"> Total Revenue of All Merchants on Date </li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Single Merchant</strong>
             <ul>
-              <li class="endoint" id="merchant-total-revenue"> Total Revenue for Single Merchant</li>
-              <li class="endoint" id="merchant-total-revenue-date"> Total Revenue for Single Merchant on Date</li>
-              <li class="endoint" id="merchant-favorite-customer"> Favorite Customer for Merchant</li>
-              <li class="endoint" id="merchant-customers-pending"> Merchant's Customers with Pending Invoices</li>
+              <li class="endpoint" id="merchant-total-revenue"> Total Revenue for Single Merchant</li>
+              <li class="endpoint" id="merchant-total-revenue-date"> Total Revenue for Single Merchant on Date</li>
+              <li class="endpoint" id="merchant-favorite-customer"> Favorite Customer for Merchant</li>
+              <li class="endpoint" id="merchant-customers-pending"> Merchant's Customers with Pending Invoices</li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Items</strong>
             <ul>
-              <li class="endoint" id="top-items-revenue"> Top Items by Total Revenue</li>
-              <li class="endoint" id="top-items-items"> Top Items by Total Items Sold</li>
-              <li class="endoint" id="item-best-day"> Best Day for Item</li>
+              <li class="endpoint" id="top-items-revenue"> Top Items by Total Revenue</li>
+              <li class="endpoint" id="top-items-items"> Top Items by Total Items Sold</li>
+              <li class="endpoint" id="item-best-day"> Best Day for Item</li>
             </ul>
           </div>
           <div class="endpoint-box">
             <strong>Customers</strong>
             <ul>
-              <li class="endoint" id="customer-favorite-merchant"> Favorite Merchant for Customer</li>
+              <li class="endpoint" id="customer-favorite-merchant"> Favorite Merchant for Customer</li>
             </ul>
           </div>
         </div>

@@ -75,3 +75,47 @@ $("#search-one-merchant").click(function() {
   $("#example-request").html(searchOneMerchant[0])
   $("#example-output").html(JSON.stringify(searchOneMerchant[1], undefined, 2))
 });
+
+var merchantItems = ["GET /api/v1/merchants/:id/items", [
+  {
+    "id": 53,
+    "name": "Item Sunt Nesciunt",
+    "description": "Magni eos cupiditate animi. Ea consequatur saepe quo earum. In magni dolorem maxime tempora. Inventore iure ad delectus quo neque voluptates. Optio repellat occaecati.",
+    "unit_price": "711.98",
+    "merchant_id": 2
+  },
+  {
+    "id": 52,
+    "name": "Item Sit Facere",
+    "description": "Vero libero laboriosam qui expedita dignissimos. Deserunt aliquam et aut accusamus aut iure natus. Qui eveniet quidem. Et praesentium quos doloremque quidem aut ab. Eius doloribus aut nisi.",
+    "unit_price": "856.42",
+    "merchant_id": 2
+  }
+]];
+
+$("#merchant-items").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(merchantItems[0])
+  $("#example-output").html(JSON.stringify(merchantItems[1], undefined, 2))
+})
+
+var merchantInvoices = ["GET /api/v1/merchants/:id/items", [
+  {
+    "id": 45,
+    "customer_id": 10,
+    "merchant_id": 2,
+    "status": "shipped"
+  },
+  {
+    "id": 77,
+    "customer_id": 16,
+    "merchant_id": 2,
+    "status": "shipped"
+  }
+]]
+
+$("#merchant-invoices").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(merchantInvoices[0])
+  $("#example-output").html(JSON.stringify(merchantInvoices[1], undefined, 2))
+})

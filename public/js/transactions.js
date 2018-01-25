@@ -96,3 +96,16 @@ $("#search-one-transaction").click(function() {
   $("#example-request").html(searchOneTransaction[0])
   $("#example-output").html(JSON.stringify(searchOneTransaction[1], undefined, 2))
 });
+
+var transactionInvoice = ["GET /api/v1/transactions/:id/invoice", {
+  "id": 1,
+  "customer_id": 1,
+  "merchant_id": 26,
+  "status": "shipped"
+}];
+
+$("#transaction-invoice").click(function() {
+  $("#search-params").html("")
+  $("#example-request").html(transactionInvoice[0])
+  $("#example-output").html(JSON.stringify(transactionInvoice[1], undefined, 2))
+});
