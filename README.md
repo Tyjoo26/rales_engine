@@ -14,6 +14,7 @@ Feel free to clone down the repo.
 - [Setup](#setup)
   - [Spec Harness](#spec-harness)
   - [Local Setup](#local-setup)
+- [Schema](#schema)
 - [Endpoints](#endpoints)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
