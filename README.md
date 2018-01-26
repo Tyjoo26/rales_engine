@@ -33,15 +33,16 @@ export BASE_URL=http://rales-engine-1710.herokuapp.com
 Run the tests with `bundle exec rake`
 
 ### Local Setup
-To run our test suite:
 ```
 git clone https://github.com/Tyjoo26/rales_engine.git
 bundle
 rails db:create db:migrate
 rails db:test:prepare
 rails import_csv:load
-rspec
 ```
+
+To run our test suite: `rspec`
+
 
 ## Schema
 ![schema](https://i.imgur.com/tUoPi6L.png)
