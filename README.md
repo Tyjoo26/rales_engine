@@ -39,6 +39,7 @@ git clone https://github.com/Tyjoo26/rales_engine.git
 bundle
 rails db:create db:migrate
 rails db:test:prepare
+rails import_csv:load
 rspec
 ```
 
