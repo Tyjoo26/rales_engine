@@ -1,5 +1,5 @@
 # README
-[![CircleCI](https://circleci.com/gh/Maxscores/rales_engine.svg?style=svg)](https://circleci.com/gh/Maxscores/rales_engine)
+[![CircleCI](https://circleci.com/gh/Maxscores/rales_engine.svg?style=shield)](https://circleci.com/gh/Maxscores/rales_engine)
 
 Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)
 
