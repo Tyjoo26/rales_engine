@@ -1,6 +1,5 @@
 class Api::V1::Invoices::InvoiceMerchantController < ApplicationController
-
-  def index
+  def show
     render json: Invoice.find(params[:id]).merchant
   end
 
