@@ -38,6 +38,7 @@ To run our test suite:
 git clone https://github.com/Tyjoo26/rales_engine.git
 bundle
 rails db:create db:migrate
+rails db:test:prepare
 rspec
 ```
 
