@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   has_many :invoices, through: :invoice_items
   has_many :transactions, through: :invoices
 
+  default_scope {order(:id)}
+
   def self.most_revenue(quantity)
     select("items.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue")
       .joins(:invoice_items)
