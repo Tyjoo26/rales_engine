@@ -1,12 +1,20 @@
 class Api::V1::Merchants::SearchController < ApplicationController
-
-
   def show
-    render json: Merchant.where(merchant_params).first
+    if params[:name]
+      merchant =  Merchant.where("name LIKE ?", "%#{params[:name]}%").first
+    else
+      merchant =  Merchant.where(merchant_params).first
+    end
+    render json: merchant
   end
 
   def index
-    render json: Merchant.where(merchant_params)
+    if params[:name]
+      merchants = Merchant.where("name LIKE ?", "%#{params[:name]}%")
+    else
+      merchants = Merchant.where(merchant_params)
+    end
+    render json: merchants
   end
 
   private

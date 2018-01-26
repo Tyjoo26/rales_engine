@@ -1,4 +1,5 @@
 # README
+[![CircleCI](https://circleci.com/gh/Maxscores/rales_engine.svg?style=shield)](https://circleci.com/gh/Maxscores/rales_engine)
 
 Welcome to Rails Engine! This is a project for Turing Backend Mod 3 class where we build an internal sales engine API using ruby on rails: [docs here](http://backend.turing.io/module3/projects/rails_engine#technical-expectations)
 
@@ -13,6 +14,7 @@ Feel free to clone down the repo.
 - [Setup](#setup)
   - [Spec Harness](#spec-harness)
   - [Local Setup](#local-setup)
+- [Schema](#schema)
 - [Endpoints](#endpoints)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -39,6 +41,8 @@ rails db:create db:migrate
 rspec
 ```
 
+## Schema
+![schema](https://i.imgur.com/tUoPi6L.png)
 
 ## Endpoints
 We recommend visiting [Rales Engine](http://rales-engine-1710.herokuapp.com/) through herokuapp to get information about the endpoints. You should direct your API requests to http://rales-engine-1710.herokuapp.com/api/v1/:endpoint
