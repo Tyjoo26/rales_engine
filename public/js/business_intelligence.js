@@ -1,4 +1,6 @@
-var topMerchantsRevenue = ["GET /api/v1/merchants/most_revenue?quantity=x (returns X merchants)", [
+var topMerchantsRevenue = [
+  "",
+  "GET /api/v1/merchants/most_revenue?quantity=x <br>(returns X merchants)", [
   {
     "id": 14,
     "name": "Dicki-Bednar"
@@ -9,67 +11,45 @@ var topMerchantsRevenue = ["GET /api/v1/merchants/most_revenue?quantity=x (retur
   }
 ]]
 
-$("#top-merchants-revenue").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(topMerchantsRevenue[0])
-  $("#example-output").html(JSON.stringify(topMerchantsRevenue[1], undefined, 2))
-})
+var topMerchantsItems = [
+  "",
+  "GET /api/v1/merchants/most_items?quantity=x <br>(returns X merchants)",
+[{
+  "id":89,
+  "name":"Kassulke, O'Hara and Quitzon"
+}]];
 
-var topMerchantsItems = ["GET /api/v1/merchants/most_items?quantity=x (returns X merchants)", {
-  "example": "example"
-}]
-
-$("#top-merchants-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(topMerchantsItems[0])
-  $("#example-output").html(JSON.stringify(topMerchantsItems[1], undefined, 2))
-})
-
-var merchantsTotalRevenue = ["GET /api/v1/merchants/revenue?date=x (date format: YYYY-MM-DD)", {
+var merchantsTotalRevenue = [
+  "",
+  "GET /api/v1/merchants/revenue?date=x <br>(date format: YYYY-MM-DD)", {
   "total_revenue": "2495397.37"
 }]
 
-$("#merchants-total-revenue").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(merchantsTotalRevenue[0])
-  $("#example-output").html(JSON.stringify(merchantsTotalRevenue[1], undefined, 2))
-})
-
-var merchantTotalRevenue = ["GET /api/v1/merchants/:id/revenue", {
+var merchantTotalRevenue = [
+  "",
+  "GET /api/v1/merchants/:id/revenue", {
   "id": 3,
   "total_revenue": "25604.00"
 }]
 
-$("#merchant-total-revenue").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(merchantTotalRevenue[0])
-  $("#example-output").html(JSON.stringify(merchantTotalRevenue[1], undefined, 2))
-})
-
-var merchantTotalRevenueDate = ["GET /api/v1/merchants/:id/revenue?date=x (date format: YYYY-MM-DD)", {
+var merchantTotalRevenueDate = [
+  "",
+  "GET /api/v1/merchants/:id/revenue?date=x <br>(date format: YYYY-MM-DD)", {
   "id": 3,
   "total_revenue": "120.00"
 }]
 
-$("#merchant-total-revenue-date").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(merchantTotalRevenueDate[0])
-  $("#example-output").html(JSON.stringify(merchantTotalRevenueDate[1], undefined, 2))
-})
-
-var merchantFavoriteCustomer = ["GET /api/v1/merchants/:id/favorite_customer", {
+var merchantFavoriteCustomer = [
+  "",
+  "GET /api/v1/merchants/:id/favorite_customer", {
   "id": 988,
   "first_name": "Efren",
   "last_name": "Smith"
 }]
 
-$("#merchant-favorite-customer").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(merchantFavoriteCustomer[0])
-  $("#example-output").html(JSON.stringify(merchantFavoriteCustomer[1], undefined, 2))
-})
-
-var merchantCustomersPending = ["GET /api/v1/merchants/:id/customers_with_pending_invoices", [
+var merchantCustomersPending = [
+  "",
+  "GET /api/v1/merchants/:id/customers_with_pending_invoices", [
 {
   "id": 28,
   "first_name": "Wilfred",
@@ -81,13 +61,9 @@ var merchantCustomersPending = ["GET /api/v1/merchants/:id/customers_with_pendin
   "last_name": "Schultz"
 }]]
 
-$("#merchant-customers-pending").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(merchantCustomersPending[0])
-  $("#example-output").html(JSON.stringify(merchantCustomersPending[1], undefined, 2))
-})
-
-var topItemsRevenue = ["GET /api/v1/items/most_revenue?quantity=x (returns X items)",
+var topItemsRevenue = [
+  "",
+  "GET /api/v1/items/most_revenue?quantity=x <br>(returns X items)",
 [
   {
     "id": 227,
@@ -105,13 +81,9 @@ var topItemsRevenue = ["GET /api/v1/items/most_revenue?quantity=x (returns X ite
   }
 ]]
 
-$("#top-items-revenue").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(topItemsRevenue[0])
-  $("#example-output").html(JSON.stringify(topItemsRevenue[1], undefined, 2))
-})
-
-var topItemsQuantity = ["GET /api/v1/items/most_items?quantity=x", [
+var topItemsQuantity = [
+  "",
+  "GET /api/v1/items/most_items?quantity=x <br>(returns X items)", [
 {
   "id": 227,
   "name": "Item Dicta Autem",
@@ -128,31 +100,16 @@ var topItemsQuantity = ["GET /api/v1/items/most_items?quantity=x", [
 }
 ]]
 
-$("#top-items-quantity").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(topItemsQuantity[0])
-  $("#example-output").html(JSON.stringify(topItemsQuantity[1], undefined, 2))
-})
-
-var itemBestDay = ["GET /api/v1/items/:id/best_day", {
+var itemBestDay = [
+  "",
+  "GET /api/v1/items/:id/best_day", {
   "best_day": "2012-03-22T03:55:09.000Z"
 }]
 
-$("#item-best-day").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(itemBestDay[0])
-  $("#example-output").html(JSON.stringify(itemBestDay[1], undefined, 2))
-})
-
-var customerFavoriteMerchant = ["GET /api/v1/customers/:id/favorite_merchant",
+var customerFavoriteMerchant = [
+  "",
+  "GET /api/v1/customers/:id/favorite_merchant",
 {
   "id": 2,
   "name": "Klein, Rempel and Jones"
-}
-]
-
-$("#customer-favorite-merchant").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(customerFavoriteMerchant[0])
-  $("#example-output").html(JSON.stringify(customerFavoriteMerchant[1], undefined, 2))
-})
+}]
