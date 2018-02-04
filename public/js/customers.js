@@ -1,4 +1,6 @@
-var allCustomers = ["GET /api/v1/customers", [
+var allCustomers = [
+  "",
+  "GET /api/v1/customers", [
   {
     "id": 1,
     "first_name": "Joey",
@@ -11,23 +13,14 @@ var allCustomers = ["GET /api/v1/customers", [
   }
 ]];
 
-$("#all-customers").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(allCustomers[0])
-  $("#example-output").html(JSON.stringify(allCustomers[1], undefined, 2))
-});
 
-var oneCustomer = ["GET /api/v1/customers/:id", {
+var oneCustomer = [
+  "",
+  "GET /api/v1/customers/:id", {
   "id": 5,
   "first_name": "Sylvester",
   "last_name": "Nader"
 }];
-
-$("#one-customer").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(oneCustomer[0])
-  $("#example-output").html(JSON.stringify(oneCustomer[1], undefined, 2))
-});
 
 var customerSearchParams = `
 <h3>Search Details</h3>
@@ -57,7 +50,9 @@ var customerSearchParams = `
 </table>
 `
 
-var searchAllCustomers = ["GET /api/v1/customers/find_all?parameter", [
+var searchManyCustomers = [
+  customerSearchParams,
+  "GET /api/v1/customers/find_all?parameter", [
   {
     "id": 477,
     "first_name": "Josefina",
@@ -70,25 +65,18 @@ var searchAllCustomers = ["GET /api/v1/customers/find_all?parameter", [
   }
 ]];
 
-$("#search-many-customers").click(function() {
-  $("#search-params").html(customerSearchParams)
-  $("#example-request").html(searchAllCustomers[0])
-  $("#example-output").html(JSON.stringify(searchAllCustomers[1], undefined, 2))
-});
-
-var searchOneCustomer = ["GET /api/v1/customers/find?parameter", {
+var searchOneCustomer = [
+  customerSearchParams,
+  "GET /api/v1/customers/find?parameter", {
   "id": 3,
   "first_name": "Mariah",
   "last_name": "Toy"
 }];
 
-$("#search-one-customer").click(function() {
-  $("#search-params").html(customerSearchParams)
-  $("#example-request").html(searchOneCustomer[0])
-  $("#example-output").html(JSON.stringify(searchOneCustomer[1], undefined, 2))
-});
 
-var customerInvoices = ["GET /api/v1/customers/:id/invoices", [
+var customerInvoices = [
+  "",
+  "GET /api/v1/customers/:id/invoices", [
   {
     "id": 13,
     "customer_id": 3,
@@ -103,13 +91,9 @@ var customerInvoices = ["GET /api/v1/customers/:id/invoices", [
   }
 ]];
 
-$("#customer-invoices").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(customerInvoices[0])
-  $("#example-output").html(JSON.stringify(customerInvoices[1], undefined, 2))
-});
-
-var customerTransactions = ["GET /api/v1/customers/:id/transactions", [
+var customerTransactions = [
+  "",
+  "GET /api/v1/customers/:id/transactions", [
   {
     "id": 15,
     "credit_card_number": "4869639160798434",
@@ -123,9 +107,3 @@ var customerTransactions = ["GET /api/v1/customers/:id/transactions", [
     "result": "success"
   }
 ]];
-
-$("#customer-transactions").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(customerTransactions[0])
-  $("#example-output").html(JSON.stringify(customerTransactions[1], undefined, 2))
-});
