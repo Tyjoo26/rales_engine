@@ -15,8 +15,6 @@ var allTransactions = [
   }]
 ];
 
-
-
 var oneTransaction = [
   "",
   "GET /api/v1/transactions/:id",
@@ -26,8 +24,6 @@ var oneTransaction = [
   "invoice_id": 5,
   "result": "success"
 }];
-
-
 
 var transactionSearchParams = `
 <h3>Search Details</h3>
@@ -61,9 +57,9 @@ var transactionSearchParams = `
 </table>
 `
 
-var searchAllTransactions = [
+var searchManyTransactions = [
   transactionSearchParams,
-  "GET /api/v1/transactions/find?parameter",
+  "GET /api/v1/transactions/find_all?parameter",
   [{
     "id": 1,
     "credit_card_number": "4654405418249632",
@@ -78,8 +74,6 @@ var searchAllTransactions = [
   }]
 ];
 
-
-
 var searchOneTransaction = [
   transactionSearchParams,
   "GET /api/v1/transactions/find?parameter",
@@ -90,8 +84,6 @@ var searchOneTransaction = [
   "result": "success"
   }
 ];
-
-
 
 var transactionInvoice = [
   "",
