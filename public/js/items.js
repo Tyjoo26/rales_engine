@@ -1,5 +1,7 @@
-var allItems = ["GET /api/v1/items", [
-  {
+var allItems = [
+  "",
+  "GET /api/v1/items",
+  [{
     "id": 1,
     "name": "Item Qui Esse",
     "description": "Nihil autem sit odio inventore deleniti. Est laudantium ratione distinctio laborum. Minus voluptatem nesciunt assumenda dicta voluptatum porro.",
@@ -15,25 +17,16 @@ var allItems = ["GET /api/v1/items", [
   }
 ]];
 
-$("#all-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(allItems[0])
-  $("#example-output").html(JSON.stringify(allItems[1], undefined, 2))
-});
-
-var oneItem = ["GET /api/v1/items/:id", {
+var oneItem = [
+  "",
+  "GET /api/v1/items/:id",
+  {
   "id": 2,
   "name": "Item Autem Minima",
   "description": "Cumque consequuntur ad. Fuga tenetur illo molestias enim aut iste. Provident quo hic aut. Aut quidem voluptates dolores. Dolorem quae ab alias tempora.",
   "unit_price": "670.76",
   "merchant_id": 1
 }];
-
-$("#one-item").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(oneItem[0])
-  $("#example-output").html(JSON.stringify(oneItem[1], undefined, 2))
-});
 
 var itemSearchParams = `
 <h3>Search Details</h3>
@@ -71,7 +64,9 @@ var itemSearchParams = `
 </table>
 `
 
-var searchManyItems = ["GET /api/v1/items/find_all?parameter", [
+var searchManyItems = [
+  itemSearchParams,
+  "GET /api/v1/items/find_all?parameter", [
   {
     "id": 201,
     "name": "Item Explicabo Ipsam",
@@ -88,13 +83,9 @@ var searchManyItems = ["GET /api/v1/items/find_all?parameter", [
   }
 ]];
 
-$("#search-many-items").click(function() {
-  $("#search-params").html(itemSearchParams)
-  $("#example-request").html(searchManyItems[0])
-  $("#example-output").html(JSON.stringify(searchManyItems[1], undefined, 2))
-});
-
-var searchOneItem = ["GET /api/v1/items/find?parameter", {
+var searchOneItem = [
+  itemSearchParams,
+  "GET /api/v1/items/find?parameter", {
   "id": 201,
   "name": "Item Explicabo Ipsam",
   "description": "Est facilis sunt molestias nam praesentium aspernatur. Reiciendis tenetur culpa at repellat. Non illum nesciunt. Sed vel et odio sint. Nemo sequi minima inventore.",
@@ -102,13 +93,9 @@ var searchOneItem = ["GET /api/v1/items/find?parameter", {
   "merchant_id": 10
 }];
 
-$("#search-one-item").click(function() {
-  $("#search-params").html(itemSearchParams)
-  $("#example-request").html(searchOneItem[0])
-  $("#example-output").html(JSON.stringify(searchOneItem[1], undefined, 2))
-});
-
-var itemInvoiceItems = ["GET /api/v1/items/:id/invoice_items",
+var itemInvoiceItems = [
+  "",
+  "GET /api/v1/items/:id/invoice_items",
 [
   {
     "id": 135,
@@ -126,20 +113,10 @@ var itemInvoiceItems = ["GET /api/v1/items/:id/invoice_items",
   }
 ]]
 
-$("#item-invoice-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(itemInvoiceItems[0])
-  $("#example-output").html(JSON.stringify(itemInvoiceItems[1], undefined, 2))
-});
-
-var itemMerchant = ["GET /api/v1/items/:id/merchant",
+var itemMerchant = [
+  "",
+  "GET /api/v1/items/:id/merchant",
 {
   "id": 2,
   "name": "Klein, Rempel and Jones"
 }]
-
-$("#item-merchant").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(itemMerchant[0])
-  $("#example-output").html(JSON.stringify(itemMerchant[1], undefined, 2))
-});
