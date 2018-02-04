@@ -1,4 +1,6 @@
-var allInvoices = ["GET /api/v1/invocies", [
+var allInvoices = [
+  "",
+  "GET /api/v1/invoices", [
   {
     "id": 1,
     "customer_id": 1,
@@ -13,24 +15,14 @@ var allInvoices = ["GET /api/v1/invocies", [
   }
 ]];
 
-$("#all-invoices").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(allInvoices[0])
-  $("#example-output").html(JSON.stringify(allInvoices[1], undefined, 2))
-});
-
-var oneInvoice = ["GET /api/v1/invocies/:id", {
+var oneInvoice = [
+  "",
+  "GET /api/v1/invoices/:id", {
   "id": 1,
   "customer_id": 1,
   "merchant_id": 26,
   "status": "shipped"
 }];
-
-$("#one-invoice").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(oneInvoice[0])
-  $("#example-output").html(JSON.stringify(oneInvoice[1], undefined, 2))
-});
 
 var invoiceSearchParams = `
 <h3>Search Details</h3>
@@ -64,7 +56,9 @@ var invoiceSearchParams = `
 </table>
 `
 
-var searchAllInvoices = ["GET /api/v1/invocies/find_all?parmeter", [
+var searchManyInvoices = [
+  invoiceSearchParams,
+  "GET /api/v1/invoices/find_all?parmeter", [
   {
     "id": 20,
     "customer_id": 4,
@@ -79,26 +73,19 @@ var searchAllInvoices = ["GET /api/v1/invocies/find_all?parmeter", [
   }
 ]];
 
-$("#search-many-invoices").click(function() {
-  $("#search-params").html(invoiceSearchParams)
-  $("#example-request").html(searchAllInvoices[0])
-  $("#example-output").html(JSON.stringify(searchAllInvoices[1], undefined, 2))
-});
-
-var searchOneInvoice = ["GET /api/v1/invocies/find?parmeter", {
+var searchOneInvoice = [
+  invoiceSearchParams,
+  "GET /api/v1/invoices/find?parmeter", {
   "id": 1,
   "customer_id": 1,
   "merchant_id": 26,
   "status": "shipped"
 }];
 
-$("#search-one-invoice").click(function() {
-  $("#search-params").html(invoiceSearchParams)
-  $("#example-request").html(searchOneInvoice[0])
-  $("#example-output").html(JSON.stringify(searchOneInvoice[1], undefined, 2))
-});
 
-var invoiceTransactions = ["GET /api/v1/invoices/:id/transactions", [
+var invoiceTransactions = [
+  "",
+  "GET /api/v1/invoices/:id/transactions", [
   {
     "id": 1,
     "credit_card_number": "4654405418249632",
@@ -113,13 +100,9 @@ var invoiceTransactions = ["GET /api/v1/invoices/:id/transactions", [
   }
 ]]
 
-$("#invoice-transactions").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceTransactions[0])
-  $("#example-output").html(JSON.stringify(invoiceTransactions[1], undefined, 2))
-});
-
-var invoiceInvoiceItems = ["GET /api/v1/invoices/:id/invoice_items", [
+var invoiceInvoiceItems = [
+  "",
+  "GET /api/v1/invoices/:id/invoice_items", [
   {
     "id": 1,
     "item_id": 539,
@@ -136,13 +119,9 @@ var invoiceInvoiceItems = ["GET /api/v1/invoices/:id/invoice_items", [
   }
 ]]
 
-$("#invoice-invoice-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceInvoiceItems[0])
-  $("#example-output").html(JSON.stringify(invoiceInvoiceItems[1], undefined, 2))
-});
-
-var invoiceItems = ["GET /api/v1/invoices/:id/items", [
+var invoiceItems = [
+  "",
+  "GET /api/v1/invoices/:id/items", [
   {
     "id": 1,
     "name": "Item Qui Esse",
@@ -159,31 +138,17 @@ var invoiceItems = ["GET /api/v1/invoices/:id/items", [
   }
 ]]
 
-$("#invoice-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceItems[0])
-  $("#example-output").html(JSON.stringify(invoiceItems[1], undefined, 2))
-});
-
-var invoiceCustomer = ["GET /api/v1/invoices/:id/customer", {
+var invoiceCustomer = [
+  "",
+  "GET /api/v1/invoices/:id/customer", {
   "id": 5,
   "first_name": "Sylvester",
   "last_name": "Nader"
 }]
 
-$("#invoice-customer").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceCustomer[0])
-  $("#example-output").html(JSON.stringify(invoiceCustomer[1], undefined, 2))
-});
-
-var invoiceMerchant = ["GET /api/v1/invoices/:id/merchant", {
+var invoiceMerchant = [
+  "",
+  "GET /api/v1/invoices/:id/merchant", {
   "id": 2,
   "name": "Klein, Rempel and Jones"
 }]
-
-$("#invoice-merchant").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceMerchant[0])
-  $("#example-output").html(JSON.stringify(invoiceMerchant[1], undefined, 2))
-});

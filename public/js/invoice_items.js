@@ -1,4 +1,6 @@
-var allInvoiceItems = ["GET /api/v1/invoice_items", [
+var allInvoiceItems = [
+  "",
+  "GET /api/v1/invoice_items", [
   {
     "id": 1,
     "item_id": 539,
@@ -15,25 +17,15 @@ var allInvoiceItems = ["GET /api/v1/invoice_items", [
   }
 ]];
 
-$("#all-invoice-items").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(allInvoiceItems[0])
-  $("#example-output").html(JSON.stringify(allInvoiceItems[1], undefined, 2))
-});
-
-var oneInvoiceItem = ["GET /api/v1/invoice_items/:id", {
+var oneInvoiceItem = [
+  "",
+  "GET /api/v1/invoice_items/:id", {
   "id": 2,
   "item_id": 528,
   "invoice_id": 1,
   "quantity": 9,
   "unit_price": "233.24"
 }];
-
-$("#one-invoice-item").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(oneInvoiceItem[0])
-  $("#example-output").html(JSON.stringify(oneInvoiceItem[1], undefined, 2))
-});
 
 var invoiceItemSearchParams = `
 <h3>Search Details</h3>
@@ -71,7 +63,9 @@ var invoiceItemSearchParams = `
 </table>
 `
 
-var searchManyInvoiceItems = ["GET /api/v1/invoice_items/find_all?parameter", [
+var searchManyInvoiceItems = [
+  invoiceItemSearchParams,
+  "GET /api/v1/invoice_items/find_all?parameter", [
   {
     "id": 135,
     "item_id": 1,
@@ -88,13 +82,9 @@ var searchManyInvoiceItems = ["GET /api/v1/invoice_items/find_all?parameter", [
   }
 ]];
 
-$("#search-many-invoice-items").click(function() {
-  $("#search-params").html(invoiceItemSearchParams)
-  $("#example-request").html(searchManyInvoiceItems[0])
-  $("#example-output").html(JSON.stringify(searchManyInvoiceItems[1], undefined, 2))
-});
-
-var searchOneInvoiceItem = ["GET /api/v1/invoice_items/find?parameter", {
+var searchOneInvoiceItem = [
+  "",
+  "GET /api/v1/invoice_items/find?parameter", {
   "id": 135,
   "item_id": 1,
   "invoice_id": 29,
@@ -102,13 +92,9 @@ var searchOneInvoiceItem = ["GET /api/v1/invoice_items/find?parameter", {
   "unit_price": "751.07"
 }];
 
-$("#search-one-invoice-item").click(function() {
-  $("#search-params").html(invoiceItemSearchParams)
-  $("#example-request").html(searchOneInvoiceItem[0])
-  $("#example-output").html(JSON.stringify(searchOneInvoiceItem[1], undefined, 2))
-});
-
-var invoiceItemsInvoice = ["GET /api/v1/invoice_items/:id/invoice",
+var invoiceItemsInvoice = [
+  "",
+  "GET /api/v1/invoice_items/:id/invoice",
 {
   "id": 1,
   "customer_id": 1,
@@ -117,13 +103,9 @@ var invoiceItemsInvoice = ["GET /api/v1/invoice_items/:id/invoice",
 }
 ]
 
-$("#invoice-items-invoice").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceItemsInvoice[0])
-  $("#example-output").html(JSON.stringify(invoiceItemsInvoice[1], undefined, 2))
-});
-
-var invoiceItemsItem = ["GET /api/v1/invoice_items/:id/item",
+var invoiceItemsItem = [
+  "",
+  "GET /api/v1/invoice_items/:id/item",
 {
   "id": 2,
   "name": "Item Autem Minima",
@@ -132,9 +114,3 @@ var invoiceItemsItem = ["GET /api/v1/invoice_items/:id/item",
   "merchant_id": 1
 }
 ]
-
-$("#invoice-items-item").click(function() {
-  $("#search-params").html("")
-  $("#example-request").html(invoiceItemsItem[0])
-  $("#example-output").html(JSON.stringify(invoiceItemsItem[1], undefined, 2))
-});
